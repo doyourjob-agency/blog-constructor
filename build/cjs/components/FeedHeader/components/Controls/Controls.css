@@ -1,0 +1,101 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-feed-controls__header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--bc-border-radius);
+  padding-bottom: 20px;
+  z-index: 10;
+}
+.bc-feed-controls__header-item {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.bc-feed-controls__header-item_title {
+  font-size: var(--g-text-display-4-font-size);
+  line-height: var(--g-text-display-4-line-height);
+  padding-top: 112px;
+  padding-bottom: 96px;
+}
+.bc-feed-controls__search {
+  width: 100%;
+  max-width: 100%;
+}
+.bc-feed-controls__select {
+  width: 100%;
+}
+.bc-feed-controls__popup.bc-feed-controls__popup {
+  max-height: 500px;
+  border-radius: 12px;
+}
+.bc-feed-controls__popup.bc-feed-controls__popup .g-select-list {
+  overflow: scroll;
+}
+.bc-feed-controls__popup.bc-feed-controls__popup .g-select-list::-webkit-scrollbar {
+  display: none;
+}
+.bc-feed-controls__popup.bc-feed-controls__popup .g-select-list .yc-list {
+  max-height: calc(500px - var(--g-text-body-3-line-height) - 12px);
+}
+.bc-feed-controls__popup.bc-feed-controls__popup .yc-list__item {
+  margin: 4px;
+  border-radius: 8px;
+}
+
+.bc-feed-controls__popup_isMobile.bc-feed-controls__popup_isMobile {
+  max-height: inherit;
+}
+
+.bc-feed-controls__popup-filter {
+  font-size: var(--g-text-body-2-font-size);
+  line-height: var(--g-text-body-2-line-height);
+  padding: 4px 12px;
+  border: none;
+  border-bottom: 1px solid var(--yc-color-line-generic);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.bc-feed-controls__select:hover {
+  width: 100%;
+}
+.bc-feed-controls__saved-only-button_savedOnly.bc-feed-controls__saved-only-button_savedOnly {
+  --g-button-background-color: var(--pc-monochrome-button-background-color);
+  --g-button-background-color-hover: var(--pc-monochrome-button-background-color-hover);
+  --yc-button-background-color: var(--pc-monochrome-button-background-color);
+  --yc-button-background-color-hover: var(--pc-monochrome-button-background-color-hover);
+}
+.bc-feed-controls__saved-only-button_savedOnly.bc-feed-controls__saved-only-button_savedOnly, .bc-feed-controls__saved-only-button_savedOnly.bc-feed-controls__saved-only-button_savedOnly:link, .bc-feed-controls__saved-only-button_savedOnly.bc-feed-controls__saved-only-button_savedOnly:visited, .bc-feed-controls__saved-only-button_savedOnly.bc-feed-controls__saved-only-button_savedOnly:active, .bc-feed-controls__saved-only-button_savedOnly.bc-feed-controls__saved-only-button_savedOnly:focus {
+  color: var(--pc-monochrome-button-color);
+}
+.bc-feed-controls__saved-only-button_savedOnly.bc-feed-controls__saved-only-button_savedOnly:hover {
+  color: var(--pc-monochrome-button-color);
+}
+
+.bc-feed-controls__saved-only-button_savedOnly:focus {
+  color: var(--g-color-base-background);
+}
+.bc-feed-controls__filter-item {
+  margin-right: 8px;
+  margin-left: 8px;
+  margin-bottom: 12px;
+  min-width: 230px;
+  flex-grow: 1;
+}
+@media (min-width: 577px) {
+  .bc-feed-controls__filter-item {
+    max-width: 240px;
+  }
+}
+.bc-feed-controls__filter-item_width-auto {
+  width: auto;
+  min-width: auto;
+  flex-grow: 0;
+}
+.bc-feed-controls__icon {
+  color: var(--g-color-base-brand);
+}
+.bc-feed-controls__icon_savedOnly {
+  color: var(--g-color-base-background);
+}

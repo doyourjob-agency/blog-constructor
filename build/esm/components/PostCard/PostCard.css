@@ -1,0 +1,84 @@
+.bc-post-card__title_size_m, .bc-post-card__title_size_s {
+  margin: 0;
+}
+
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-post-card__card {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+.bc-post-card__card_fullWidth {
+  flex-direction: row;
+}
+@media (max-width: 1081px) {
+  .bc-post-card__card_fullWidth {
+    flex-direction: column;
+  }
+}
+.bc-post-card__header_fullWidth {
+  min-height: auto;
+  height: 100%;
+}
+@media (min-width: 1081px) {
+  .bc-post-card__header_fullWidth {
+    width: 66%;
+    min-height: 480px;
+  }
+}
+.bc-post-card__title {
+  margin-bottom: 8px;
+}
+.bc-post-card__title_size_s {
+  font-size: var(--g-text-header-1-font-size);
+  line-height: var(--g-text-header-1-line-height);
+  color: var(--pc-text-header-color);
+  font-weight: var(--g-text-accent-font-weight);
+}
+.bc-post-card__title_size_m {
+  font-size: var(--g-text-display-2-font-size);
+  line-height: var(--g-text-display-2-line-height);
+  color: var(--pc-text-header-color);
+  font-weight: var(--g-text-accent-font-weight);
+}
+@media (max-width: 576px) {
+  .bc-post-card__title_size_m {
+    font-size: var(--g-text-display-1-font-size);
+    line-height: var(--g-text-display-1-line-height);
+  }
+}
+.bc-post-card__image-container {
+  height: 156px;
+}
+.bc-post-card__tag {
+  color: var(--g-color-text-secondary);
+  font-weight: var(--g-text-accent-font-weight);
+}
+.bc-post-card__tag_size_s {
+  font-size: var(--g-text-body-2-font-size);
+  line-height: var(--g-text-body-2-line-height);
+  padding-bottom: 4px;
+}
+.bc-post-card__tag_size_m {
+  font-size: var(--g-text-body-3-font-size);
+  line-height: var(--g-text-body-3-line-height);
+  padding-bottom: 8px;
+}
+.bc-post-card__description {
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 96px;
+  white-space: initial;
+  color: var(--g-color-text-primary);
+}
+@supports (-webkit-line-clamp: 5) {
+  .bc-post-card__description {
+    max-height: none;
+    -webkit-line-clamp: 5;
+  }
+}
+.bc-post-card__description_size_m {
+  max-height: 128px;
+}

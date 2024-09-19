@@ -1,0 +1,96 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-post-info__item {
+  font-size: var(--g-text-body-2-font-size);
+  line-height: var(--g-text-body-2-line-height);
+  display: flex;
+  padding-right: 24px;
+  padding-top: 12px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.bc-post-info__item_size_s {
+  font-size: var(--g-text-body-2-font-size);
+  line-height: var(--g-text-body-2-line-height);
+}
+.bc-post-info__item_size_m {
+  font-size: var(--g-text-body-3-font-size);
+  line-height: var(--g-text-body-3-line-height);
+}
+.bc-post-info__item_save {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.bc-post-info__item:last-child {
+  font-size: var(--g-text-body-2-font-size);
+  line-height: var(--g-text-body-2-line-height);
+  display: flex;
+  padding-right: 0px;
+  padding-top: 12px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.bc-post-info__switcher {
+  color: var(--g-color-text-secondary);
+}
+.bc-post-info__switcher:hover {
+  color: var(--g-color-text-primary);
+}
+.bc-post-info__switcher_theme_dark {
+  color: var(--g-color-text-light-secondary);
+}
+.bc-post-info__switcher_theme_dark.gc-share-tooltip__container, .bc-post-info__switcher_theme_dark.gc-share-popover__container {
+  color: var(--g-color-text-light-secondary);
+}
+.bc-post-info__switcher_theme_dark:hover {
+  color: var(--g-color-text-light-primary);
+}
+.bc-post-info__switcher_theme_dark:hover.gc-share-tooltip__container, .bc-post-info__switcher_theme_dark:hover.gc-share-popover__container {
+  color: var(--g-color-text-light-primary);
+}
+.bc-post-info__container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  color: var(--g-color-text-secondary);
+}
+.bc-post-info__container_theme_dark {
+  color: var(--g-color-text-light-secondary);
+}
+.bc-post-info__icon {
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+}
+.bc-post-info__title {
+  width: auto;
+  overflow: hidden;
+}
+.bc-post-info__title_cursor {
+  cursor: pointer;
+}
+.bc-post-info__content {
+  display: flex;
+}
+.bc-post-info__content_cursor {
+  cursor: pointer;
+}
+.bc-post-info__content_cursor:hover {
+  color: var(--g-color-text-primary);
+}
+.bc-post-info__content_cursor.bc-post-info__content_theme_dark:hover {
+  color: var(--g-color-text-light-primary);
+}
+.bc-post-info__likes {
+  display: flex;
+}
+.bc-post-info__suggest-container {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}

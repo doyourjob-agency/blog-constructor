@@ -1,0 +1,7 @@
+.bc-meta {
+  padding: 0;
+  margin: 0;
+}
+.bc-meta__breadcrumbs {
+  display: inline-block;
+}

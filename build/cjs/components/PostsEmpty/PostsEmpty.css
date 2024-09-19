@@ -1,0 +1,25 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-posts-empty__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bc-posts-empty__title, .bc-posts-empty__subtitle {
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 400px;
+  width: 100%;
+}
+.bc-posts-empty__title {
+  margin-top: 24px;
+  font-size: var(--g-text-display-2-font-size);
+  line-height: var(--g-text-display-2-line-height);
+  font-weight: var(--g-text-accent-font-weight);
+}
+.bc-posts-empty__subtitle {
+  margin-top: 16px;
+  font-size: var(--g-text-body-3-font-size);
+  line-height: var(--g-text-body-3-line-height);
+}

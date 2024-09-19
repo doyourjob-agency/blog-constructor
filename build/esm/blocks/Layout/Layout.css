@@ -1,0 +1,22 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-layout {
+  margin: 0;
+  padding: 0;
+}
+.bc-layout__left-col.bc-layout__left-col {
+  padding: 0;
+}
+
+.bc-layout__right-col.bc-layout__right-col {
+  padding: 0;
+}
+
+.bc-layout__row {
+  padding: 0;
+  margin: 0;
+}
+.bc-layout__item {
+  margin: 0;
+  padding: 0 8px;
+}

@@ -1,0 +1,44 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-search {
+  font-size: var(--g-text-body-1-font-size);
+  line-height: var(--g-text-body-1-line-height);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: width 0.3s;
+}
+.bc-search__input-icon {
+  display: flex;
+  padding-right: 7px;
+  border: none;
+  font: inherit;
+  background: none;
+  color: var(--g-color-text-hint);
+  cursor: pointer;
+}
+.bc-search__search-suggest {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  background-color: var(--g-color-base-background);
+  border-radius: var(--bc-text-input-border-radius);
+  border: 1px solid var(--g-color-base-background);
+}
+.bc-search__search-suggest:hover, .bc-search__search-suggest:focus {
+  border: 1px solid var(--g-color-base-generic-hover);
+}
+.bc-search .bc-search__search-suggest-control {
+  padding-left: 12px;
+  padding-right: 32px;
+}
+.bc-search_size_s {
+  --bc-text-input-border-radius: var(--g-border-radius-l);
+  height: 36px;
+  width: 352px;
+  max-width: 100%;
+}
+.bc-search_size_m {
+  --bc-text-input-border-radius: var(--g-border-radius-xl);
+}

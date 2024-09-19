@@ -1,0 +1,14 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-feed-custom-select-option {
+  font-size: var(--g-text-body-2-font-size);
+  line-height: var(--g-text-body-2-line-height);
+  display: flex;
+}
+.bc-feed-custom-select-option__icon {
+  margin-right: 6px;
+}
+.bc-feed-custom-select-option__icon > svg {
+  width: 20px;
+  height: 20px;
+}

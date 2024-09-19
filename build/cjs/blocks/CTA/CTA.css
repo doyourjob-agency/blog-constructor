@@ -1,0 +1,35 @@
+.bc-cta__card {
+  display: flex;
+  background-color: var(--g-color-base-float);
+  border-radius: var(--bc-border-radius);
+  min-height: 80px;
+  align-content: center;
+  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 32px;
+  width: calc(33.3333333333% - (32px / 2));
+}
+.bc-cta__content {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 16px;
+}
+@media (max-width: 769px) {
+  .bc-cta__content {
+    flex-wrap: wrap;
+  }
+  .bc-cta__card {
+    width: calc((100% / 2) - 16px);
+    flex-grow: 1;
+  }
+}
+@media (max-width: 577px) {
+  .bc-cta__content {
+    flex-direction: column;
+  }
+  .bc-cta__card {
+    width: 100%;
+  }
+}
