@@ -1,0 +1,32 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-author__layout {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  overflow: hidden;
+}
+@media (max-width: 1081px) {
+  .bc-author__layout {
+    width: 50%;
+  }
+}
+@media (max-width: 577px) {
+  .bc-author__layout {
+    width: 100%;
+  }
+}
+.bc-author__description {
+  color: var(--g-color-text-primary);
+}
+.bc-author__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+  align-content: flex-start;
+  position: relative;
+}
+.bc-author__container {
+  background-color: var(--pc-color-base-silver);
+}

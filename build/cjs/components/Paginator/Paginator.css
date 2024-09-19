@@ -1,0 +1,54 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-paginator {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.bc-paginator__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin-left: 4px;
+  padding: 12px 0px;
+  color: var(--g-color-text-primary);
+  font-size: var(--g-text-body-2-font-size);
+  line-height: var(--g-text-body-2-line-height);
+}
+.bc-paginator__item_type_page {
+  --bc-border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  border-radius: var(--bc-border-radius);
+}
+.bc-paginator__item_type_page:hover {
+  background: var(--g-color-base-simple-hover);
+}
+.bc-paginator__item_type_page.bc-paginator__item_active {
+  background: var(--g-color-base-simple-hover);
+  cursor: default;
+}
+.bc-paginator__pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 577px) {
+  .bc-paginator__pagination {
+    flex-direction: column;
+  }
+}
+.bc-paginator__pagination-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+}

@@ -1,0 +1,54 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-feed-header {
+  margin-top: 16px;
+}
+.bc-feed-header__header {
+  padding: 16px 0;
+}
+.bc-feed-header__content {
+  position: relative;
+  height: 100%;
+  padding-bottom: 0;
+}
+.bc-feed-header__content_offset_large {
+  padding: calc(128px - 96px) 0 16px;
+  margin-bottom: -48px;
+}
+.bc-feed-header__content_theme_dark.bc-feed-header__content_theme_dark .bc-feed-header__title,
+.bc-feed-header__content_theme_dark.bc-feed-header__content_theme_dark .bc-feed-header__description * {
+  color: var(--g-color-text-light-primary);
+}
+
+.bc-feed-header_has-background {
+  height: calc(100% + 96px);
+}
+.bc-feed-header__content {
+  position: relative;
+  z-index: 10;
+}
+.bc-feed-header__background, .bc-feed-header__background-media {
+  z-index: 5;
+}
+.bc-feed-header__background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1440px;
+  transform: translateX(-50%);
+  max-width: 98vw;
+  height: 100%;
+  border-radius: var(--bc-border-radius);
+}
+@media (max-width: 769px) {
+  .bc-feed-header_has-background .bc-feed-header__background-img {
+    display: none;
+  }
+  .bc-feed-header_has-background .bc-feed-header__content_vertical-offset_s, .bc-feed-header_has-background .bc-feed-header__content_vertical-offset_m, .bc-feed-header_has-background .bc-feed-header__content_vertical-offset_l, .bc-feed-header_has-background .bc-feed-header__content_vertical-offset_xl {
+    padding: calc(96px - 16px) 0;
+  }
+}
+.mobile .bc-feed-header_has-background .bc-feed-header__title {
+  font-size: var(--g-text-display-2-font-size);
+  line-height: var(--g-text-display-2-line-height);
+}

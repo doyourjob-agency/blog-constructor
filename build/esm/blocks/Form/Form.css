@@ -1,0 +1,16 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-form-block__container {
+  border-radius: var(--bc-border-radius);
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+}
+.bc-form-block__container_border_shadow {
+  box-shadow: 0 2px 8px var(--pc-color-sfx-shadow), 0 4px 24px var(--pc-color-sfx-shadow);
+  overflow-x: hidden;
+  border-radius: var(--bc-border-radius);
+}
+.bc-form-block__container_border_line {
+  border: 1px solid var(--g-color-line-generic);
+}

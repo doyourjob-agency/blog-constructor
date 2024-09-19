@@ -1,0 +1,85 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-feed-custom-switcher__custom-switcher {
+  font-size: var(--g-text-body-2-font-size);
+  line-height: var(--g-text-body-2-line-height);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--g-color-base-background);
+  border: 1px solid var(--g-color-base-background);
+  border-radius: var(--g-border-radius-xl);
+  width: 100%;
+  line-height: 42px;
+  text-align: initial;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+.bc-feed-custom-switcher__custom-switcher:focus {
+  outline: 2px solid var(--g-color-line-focus);
+  outline-offset: 0;
+}
+.bc-feed-custom-switcher__custom-switcher:focus:not(:focus-visible) {
+  outline: 0;
+}
+.bc-feed-custom-switcher__custom-switcher + .g-popup.g-popup_open {
+  position: absolute !important;
+  inset: auto !important;
+  transform: translate3d(0, 4px, 0) !important;
+}
+.bc-feed-custom-switcher__custom-switcher .g-select-clear {
+  width: 11px;
+  height: 11px;
+  margin-right: 9px;
+}
+.bc-feed-custom-switcher__custom-switcher:hover {
+  border-color: var(--g-color-base-generic-hover);
+  cursor: pointer;
+}
+.bc-feed-custom-switcher__custom-switcher-element {
+  color: var(--g-color-text-primary);
+}
+.bc-feed-custom-switcher__custom-switcher-element_content {
+  display: inline-block;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 12px;
+}
+.bc-feed-custom-switcher__custom-switcher-element_counter {
+  align-items: center;
+  height: 20px;
+  padding: 0 6px;
+  background-color: var(--g-color-base-selection);
+  border-radius: 4px;
+  transition: backgound-color 0.1s linear;
+  font-size: var(--g-text-body-1-font-size);
+  line-height: var(--g-text-body-1-line-height);
+}
+.bc-feed-custom-switcher__custom-switcher-element_arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 100%;
+}
+.bc-feed-custom-switcher__custom-switcher-element_overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--g-border-radius-xl);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.bc-feed-custom-switcher__switcher-arrow {
+  width: 16px;
+  height: 16px;
+}
+.bc-feed-custom-switcher__clear {
+  width: 11px;
+  height: 11px;
+  color: var(--g-color-text-primary);
+}

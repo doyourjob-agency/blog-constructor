@@ -1,0 +1,58 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-banner {
+  margin-top: 16px;
+  padding-bottom: 16px;
+}
+.bc-banner__content {
+  width: 100%;
+  border-radius: var(--bc-border-radius);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.bc-banner__container {
+  width: 100%;
+  border-radius: var(--bc-border-radius);
+  display: flex;
+  min-height: 220px;
+}
+.bc-banner__container_offset_large {
+  padding: calc(128px - 96px) 0 16px;
+  margin-bottom: -48px;
+}
+.bc-banner__info, .bc-banner__image {
+  flex: 1;
+}
+.bc-banner__info {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: baseline;
+}
+.bc-banner__image {
+  margin: var(--pc-image-padding);
+  border-radius: calc(var(--pc-border-radius) - var(--pc-image-padding));
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  object-fit: cover;
+}
+.bc-banner__image-container {
+  height: 100%;
+}
+.bc-banner__image-container_image-size_s {
+  width: 25%;
+}
+.bc-banner__image-container_image-size_m {
+  width: 50%;
+}
+@media (max-width: 577px) {
+  .bc-banner__content {
+    flex-direction: column;
+  }
+  .bc-banner__image-container_image-size_s, .bc-banner__image-container_image-size_m {
+    width: 100%;
+    height: 236px;
+  }
+}

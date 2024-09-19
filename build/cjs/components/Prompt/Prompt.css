@@ -1,0 +1,61 @@
+.bc-prompt__content {
+  box-shadow: 0px 4px 24px var(--pc-color-sfx-shadow), 0px 2px 8px var(--pc-color-sfx-shadow);
+}
+
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+@keyframes bc-prompt_open {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes bc-prompt_close {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+.bc-prompt {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+}
+.bc-prompt:not(.bc-prompt_mounted) {
+  display: none;
+}
+.bc-prompt__content {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 16px;
+  align-items: center;
+  margin: 24px;
+  padding: 16px 20px;
+  border-radius: calc(var(--pc-border-radius) / 2);
+  background-color: var(--g-color-base-float);
+  font-size: var(--g-text-body-2-font-size);
+}
+.bc-prompt_close {
+  pointer-events: none;
+}
+.bc-prompt_open > .bc-prompt__content {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: bc-prompt_open 600ms forwards;
+}
+.bc-prompt_close > .bc-prompt__content {
+  opacity: 1;
+  transform: translateY(0%);
+  animation: bc-prompt_close 600ms forwards;
+}

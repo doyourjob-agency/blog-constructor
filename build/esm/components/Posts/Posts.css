@@ -1,0 +1,53 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-posts {
+  position: relative;
+}
+.bc-posts__cards-container, .bc-posts__pinned-container {
+  padding-top: 24px;
+  scroll-margin: 48px;
+}
+.bc-posts__cards-container_isLoading {
+  opacity: 0.7;
+}
+.bc-posts__pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+.bc-posts__more-button {
+  margin-bottom: 12px;
+}
+.bc-posts__error-show-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--g-color-base-danger-medium);
+  padding-bottom: 12px;
+}
+.bc-posts__paginator {
+  padding-top: 12px;
+}
+.bc-posts__loaderContainer {
+  z-index: 6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}

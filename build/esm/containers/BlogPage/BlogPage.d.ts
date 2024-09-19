@@ -1,0 +1,21 @@
+import React, { SyntheticEvent } from 'react';
+import { CustomConfig, NavigationData, PageConstructorProviderProps, PageContent } from '@gravity-ui/page-constructor';
+import { GetPostsType, MetaProps, PostsProps, Service, Tag, ToggleLikeCallbackType } from '../../models/common';
+import './BlogPage.css';
+export type BlogPageProps = {
+    content: PageContent;
+    posts: PostsProps;
+    tags: Tag[];
+    services?: Service[];
+    navigation?: NavigationData;
+    getPosts: GetPostsType;
+    hasLikes?: boolean;
+    toggleLike?: ToggleLikeCallbackType;
+    metaData?: MetaProps;
+    settings?: PageConstructorProviderProps;
+    custom?: CustomConfig;
+    pageCountForShowSupportButtons?: number;
+    isSignedInUser?: boolean;
+    onClickSignIn?: React.EventHandler<SyntheticEvent>;
+};
+export declare const BlogPage: ({ content, posts, tags, services, getPosts, metaData, custom, hasLikes, toggleLike, navigation, settings, pageCountForShowSupportButtons, isSignedInUser, onClickSignIn, }: BlogPageProps) => React.JSX.Element;

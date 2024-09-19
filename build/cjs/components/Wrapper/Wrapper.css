@@ -1,0 +1,32 @@
+/* use this for style redefinitions to awoid problems with
+unpredictable css rules order in build */
+.bc-wrapper_padding-top_xs {
+  padding-top: 0px;
+}
+.bc-wrapper_padding-top_s {
+  padding-top: 16px;
+}
+.bc-wrapper_padding-top_m {
+  padding-top: 32px;
+}
+.bc-wrapper_padding-top_l {
+  padding-top: 48px;
+}
+.bc-wrapper_padding-top_xl {
+  padding-top: 64px;
+}
+.bc-wrapper_padding-bottom_xs {
+  padding-bottom: 0px;
+}
+.bc-wrapper_padding-bottom_s {
+  padding-bottom: 16px;
+}
+.bc-wrapper_padding-bottom_m {
+  padding-bottom: 32px;
+}
+.bc-wrapper_padding-bottom_l {
+  padding-bottom: 48px;
+}
+.bc-wrapper_padding-bottom_xl {
+  padding-bottom: 64px;
+}
