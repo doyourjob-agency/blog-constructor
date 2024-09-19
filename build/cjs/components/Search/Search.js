@@ -20,16 +20,18 @@ const AUTOFOCUS_TIMEOUT = 0;
  *
  * @returns {JSX|null}
  */
-const Search = ({ className, initialValue, onSubmit, debounce = 300, placeholder = (0, i18n_1.i18)(i18n_1.Keyset.Search), size = 'm', autoFocus = false, value: externalValue, }) => {
+const Search = ({ className, initialValue, onSubmit, debounce = 300, placeholder = (0, i18n_1.i18)(i18n_1.Keyset.Search), size = 'm', autoFocus = false, }) => {
     const handleChange = (0, debounce_1.default)(onSubmit, debounce);
+    const [isSetInitValue, setIsSetInitValue] = (0, react_1.useState)(false);
     const [value, setValue] = (0, react_1.useState)(initialValue);
     const inputRef = (0, react_1.useRef)(null);
     const isIPhone = (0, useIsIPhone_1.useIsIPhone)();
     (0, react_1.useEffect)(() => {
-        if (externalValue !== undefined) {
-            setValue(externalValue);
+        if (!isSetInitValue && !value && initialValue) {
+            setIsSetInitValue(true);
+            setValue(initialValue);
         }
-    }, [externalValue]);
+    }, [isSetInitValue, value, initialValue]);
     (0, react_1.useEffect)(() => {
         if (autoFocus && !isIPhone) {
             setTimeout(() => { var _a; return (_a = inputRef === null || inputRef === void 0 ? void 0 : inputRef.current) === null || _a === void 0 ? void 0 : _a.focus({ preventScroll: true }); }, AUTOFOCUS_TIMEOUT);

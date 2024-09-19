@@ -8,7 +8,7 @@ export interface RouterContextProps {
     hostname: string;
     query?: Query;
     updateQueryCallback: (query: Query) => void;
-    setFunctionUpdateQueryBeforeHandleLoad?: (callback: (payload: Query) => void) => Promise<void>;
+    setFunctionUpdateQueryBeforeHandleLoad?: (callback: (payload: Query) => Promise<void>) => void;
 }
 
 export const RouterContext = React.createContext<RouterContextProps>({} as RouterContextProps);

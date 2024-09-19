@@ -87,8 +87,6 @@ export const Feed = ({image}: FeedProps) => {
 
     const handleChangeQueryParams: HandleChangeQueryParams = useCallback(
         (value) => {
-            setIsRunHandleLoad(true);
-
             dispatch({type: ActionTypes.QueryParamsChange, payload: value});
 
             const hasFirstPageQuery = Object.keys(value).some(
@@ -126,6 +124,7 @@ export const Feed = ({image}: FeedProps) => {
     const updateQueryBeforeHandleLoad = useCallback(
         async (payload: Query) => {
             if (isRunHandleLoad) return;
+
             const query = {page: DEFAULT_PAGE, ...payload};
 
             dispatch({type: ActionTypes.QueryParamsChange, payload: query});
@@ -134,18 +133,22 @@ export const Feed = ({image}: FeedProps) => {
                 setErrorLoad(false);
                 setIsFetching(true);
 
-                const fetchedData = await fetchData({page: DEFAULT_PAGE, query});
-
-                if (fetchedData) {
-                    dispatch({
-                        type: ActionTypes.SetPosts,
-                        payload: {
-                            posts: fetchedData.posts,
-                            pinnedPost: fetchedData.pinnedPost,
-                            count: fetchedData.count,
-                            page: DEFAULT_PAGE,
-                        },
-                    });
+                if (query && getPosts) {
+                    const queryParamsForRequest = getFeedQueryParams(query, DEFAULT_PAGE);
+                    const fetchedData = await getPosts(queryParamsForRequest);
+                    if (fetchedData) {
+                        dispatch({
+                            type: ActionTypes.SetPosts,
+                            payload: {
+                                posts: fetchedData.posts,
+                                pinnedPost: fetchedData.pinnedPost,
+                                count: fetchedData.count,
+                                page: DEFAULT_PAGE,
+                            },
+                        });
+                    }
+                } else {
+                    throw new Error('cant get request');
                 }
             } catch (err) {
                 setErrorLoad(true);
@@ -155,7 +158,7 @@ export const Feed = ({image}: FeedProps) => {
 
             setIsFetching(false);
         },
-        [isRunHandleLoad, fetchData],
+        [isRunHandleLoad, getPosts],
     );
 
     useEffect(() => {
@@ -164,6 +167,8 @@ export const Feed = ({image}: FeedProps) => {
 
     const handleLoad = useCallback(
         async ({page, query}: FetchArgs) => {
+            setIsRunHandleLoad(true);
+
             const pageNumber = Number(page || queryParams.page || DEFAULT_PAGE);
 
             handleChangeQueryParams(query);

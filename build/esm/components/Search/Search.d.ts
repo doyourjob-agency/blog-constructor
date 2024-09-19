@@ -18,5 +18,5 @@ interface SearchProps extends ClassNameProps {
  *
  * @returns {JSX|null}
  */
-export declare const Search: ({ className, initialValue, onSubmit, debounce, placeholder, size, autoFocus, value: externalValue, }: SearchProps) => React.JSX.Element;
+export declare const Search: ({ className, initialValue, onSubmit, debounce, placeholder, size, autoFocus, }: SearchProps) => React.JSX.Element;
 export {};

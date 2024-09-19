@@ -57,7 +57,6 @@ const Feed = ({ image }) => {
         dispatch({ type: reducer_1.ActionTypes.SetErrorLoad, payload: value });
     };
     const handleChangeQueryParams = (0, react_1.useCallback)((value) => {
-        setIsRunHandleLoad(true);
         dispatch({ type: reducer_1.ActionTypes.QueryParamsChange, payload: value });
         const hasFirstPageQuery = Object.keys(value).some((queryKey) => queryKey === PAGE_QUERY && value[queryKey] === FIRST_PAGE);
         const result = hasFirstPageQuery
@@ -82,17 +81,23 @@ const Feed = ({ image }) => {
         try {
             setErrorLoad(false);
             setIsFetching(true);
-            const fetchedData = await fetchData({ page: constants_2.DEFAULT_PAGE, query });
-            if (fetchedData) {
-                dispatch({
-                    type: reducer_1.ActionTypes.SetPosts,
-                    payload: {
-                        posts: fetchedData.posts,
-                        pinnedPost: fetchedData.pinnedPost,
-                        count: fetchedData.count,
-                        page: constants_2.DEFAULT_PAGE,
-                    },
-                });
+            if (query && getPosts) {
+                const queryParamsForRequest = (0, common_2.getFeedQueryParams)(query, constants_2.DEFAULT_PAGE);
+                const fetchedData = await getPosts(queryParamsForRequest);
+                if (fetchedData) {
+                    dispatch({
+                        type: reducer_1.ActionTypes.SetPosts,
+                        payload: {
+                            posts: fetchedData.posts,
+                            pinnedPost: fetchedData.pinnedPost,
+                            count: fetchedData.count,
+                            page: constants_2.DEFAULT_PAGE,
+                        },
+                    });
+                }
+            }
+            else {
+                throw new Error('cant get request');
             }
         }
         catch (err) {
@@ -100,12 +105,13 @@ const Feed = ({ image }) => {
         }
         (0, common_2.scrollOnPageChange)(CONTAINER_ID);
         setIsFetching(false);
-    }, [isRunHandleLoad, fetchData]);
+    }, [isRunHandleLoad, getPosts]);
     (0, react_1.useEffect)(() => {
         var _a;
         (_a = router.setFunctionUpdateQueryBeforeHandleLoad) === null || _a === void 0 ? void 0 : _a.call(router, updateQueryBeforeHandleLoad);
     }, [router, updateQueryBeforeHandleLoad]);
     const handleLoad = (0, react_1.useCallback)(async ({ page, query }) => {
+        setIsRunHandleLoad(true);
         const pageNumber = Number(page || queryParams.page || constants_2.DEFAULT_PAGE);
         handleChangeQueryParams(query);
         try {

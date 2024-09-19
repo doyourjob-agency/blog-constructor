@@ -45,19 +45,19 @@ export const Search = ({
     placeholder = i18(Keyset.Search),
     size = 'm',
     autoFocus = false,
-    value: externalValue,
 }: SearchProps) => {
     const handleChange = lodashDebounce(onSubmit, debounce);
-
+    const [isSetInitValue, setIsSetInitValue] = useState(false);
     const [value, setValue] = useState<string>(initialValue);
     const inputRef = useRef<HTMLInputElement>(null);
     const isIPhone = useIsIPhone();
 
     useEffect(() => {
-        if (externalValue !== undefined) {
-            setValue(externalValue);
+        if (!isSetInitValue && !value && initialValue) {
+            setIsSetInitValue(true);
+            setValue(initialValue);
         }
-    }, [externalValue]);
+    }, [isSetInitValue, value, initialValue]);
 
     useEffect(() => {
         if (autoFocus && !isIPhone) {

@@ -53,7 +53,6 @@ export const Feed = ({ image }) => {
         dispatch({ type: ActionTypes.SetErrorLoad, payload: value });
     };
     const handleChangeQueryParams = useCallback((value) => {
-        setIsRunHandleLoad(true);
         dispatch({ type: ActionTypes.QueryParamsChange, payload: value });
         const hasFirstPageQuery = Object.keys(value).some((queryKey) => queryKey === PAGE_QUERY && value[queryKey] === FIRST_PAGE);
         const result = hasFirstPageQuery
@@ -78,17 +77,23 @@ export const Feed = ({ image }) => {
         try {
             setErrorLoad(false);
             setIsFetching(true);
-            const fetchedData = await fetchData({ page: DEFAULT_PAGE, query });
-            if (fetchedData) {
-                dispatch({
-                    type: ActionTypes.SetPosts,
-                    payload: {
-                        posts: fetchedData.posts,
-                        pinnedPost: fetchedData.pinnedPost,
-                        count: fetchedData.count,
-                        page: DEFAULT_PAGE,
-                    },
-                });
+            if (query && getPosts) {
+                const queryParamsForRequest = getFeedQueryParams(query, DEFAULT_PAGE);
+                const fetchedData = await getPosts(queryParamsForRequest);
+                if (fetchedData) {
+                    dispatch({
+                        type: ActionTypes.SetPosts,
+                        payload: {
+                            posts: fetchedData.posts,
+                            pinnedPost: fetchedData.pinnedPost,
+                            count: fetchedData.count,
+                            page: DEFAULT_PAGE,
+                        },
+                    });
+                }
+            }
+            else {
+                throw new Error('cant get request');
             }
         }
         catch (err) {
@@ -96,12 +101,13 @@ export const Feed = ({ image }) => {
         }
         scrollOnPageChange(CONTAINER_ID);
         setIsFetching(false);
-    }, [isRunHandleLoad, fetchData]);
+    }, [isRunHandleLoad, getPosts]);
     useEffect(() => {
         var _a;
         (_a = router.setFunctionUpdateQueryBeforeHandleLoad) === null || _a === void 0 ? void 0 : _a.call(router, updateQueryBeforeHandleLoad);
     }, [router, updateQueryBeforeHandleLoad]);
     const handleLoad = useCallback(async ({ page, query }) => {
+        setIsRunHandleLoad(true);
         const pageNumber = Number(page || queryParams.page || DEFAULT_PAGE);
         handleChangeQueryParams(query);
         try {
