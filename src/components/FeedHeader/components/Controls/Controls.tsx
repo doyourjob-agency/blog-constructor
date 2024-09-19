@@ -1,4 +1,4 @@
-import React, {ReactNode, useContext, useMemo, useState} from 'react';
+import React, {ReactNode, useContext, useEffect, useMemo, useState} from 'react';
 
 import {useAnalytics} from '@gravity-ui/page-constructor';
 import {Button, Icon, Select} from '@gravity-ui/uikit';
@@ -57,6 +57,10 @@ export const Controls = ({
 
     const [savedOnly, setSavedOnly] = useState<boolean>(savedOnlyInitial === 'true');
     const [search, setSearch] = useState<string>(searchInitial as string);
+
+    useEffect(() => {
+        setSearch(searchInitial as string);
+    }, [searchInitial]);
 
     const isMobile = useContext(MobileContext);
 
@@ -149,6 +153,7 @@ export const Controls = ({
                         placeholder={i18n(Keyset.Search)}
                         initialValue={search && typeof search === 'string' ? search : ''}
                         onSubmit={handleSearch}
+                        debounce={0}
                     />
                 </div>
                 <div className={b('filter-item')}>
