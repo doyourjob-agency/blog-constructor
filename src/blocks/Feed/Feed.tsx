@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo, useReducer} from 'react';
+import React, {useCallback, useContext, useEffect, useMemo, useReducer, useState} from 'react';
 
 import {useAnalytics} from '@gravity-ui/page-constructor';
 /**
@@ -18,7 +18,7 @@ import {RouterContext} from '../../contexts/RouterContext';
 import metrika from '../../counters/metrika';
 import {MetrikaCounter} from '../../counters/utils';
 import {FeedProps} from '../../models/blocks';
-import {DefaultEventNames, FetchArgs, HandleChangeQueryParams} from '../../models/common';
+import {DefaultEventNames, FetchArgs, HandleChangeQueryParams, Query} from '../../models/common';
 import {getFeedQueryParams, scrollOnPageChange} from '../../utils/common';
 import {DEFAULT_PAGE, DEFAULT_ROWS_PER_PAGE} from '../constants';
 
@@ -39,6 +39,7 @@ export const Feed = ({image}: FeedProps) => {
         pageCountForShowSupportButtons,
     } = useContext(FeedContext);
     const router = useContext(RouterContext);
+    const [isRunHandleLoad, setIsRunHandleLoad] = useState(false);
     const handleAnalytics = useAnalytics(DefaultEventNames.ShowMore);
 
     const [
@@ -86,6 +87,8 @@ export const Feed = ({image}: FeedProps) => {
 
     const handleChangeQueryParams: HandleChangeQueryParams = useCallback(
         (value) => {
+            setIsRunHandleLoad(true);
+
             dispatch({type: ActionTypes.QueryParamsChange, payload: value});
 
             const hasFirstPageQuery = Object.keys(value).some(
@@ -119,6 +122,45 @@ export const Feed = ({image}: FeedProps) => {
         },
         [getPosts, queryParams],
     );
+
+    const updateQueryBeforeHandleLoad = useCallback(
+        async (payload: Query) => {
+            if (isRunHandleLoad) return;
+            const query = {page: DEFAULT_PAGE, ...payload};
+
+            dispatch({type: ActionTypes.QueryParamsChange, payload: query});
+
+            try {
+                setErrorLoad(false);
+                setIsFetching(true);
+
+                const fetchedData = await fetchData({page: DEFAULT_PAGE, query});
+
+                if (fetchedData) {
+                    dispatch({
+                        type: ActionTypes.SetPosts,
+                        payload: {
+                            posts: fetchedData.posts,
+                            pinnedPost: fetchedData.pinnedPost,
+                            count: fetchedData.count,
+                            page: DEFAULT_PAGE,
+                        },
+                    });
+                }
+            } catch (err) {
+                setErrorLoad(true);
+            }
+
+            scrollOnPageChange(CONTAINER_ID);
+
+            setIsFetching(false);
+        },
+        [isRunHandleLoad, fetchData],
+    );
+
+    useEffect(() => {
+        router.setFunctionUpdateQueryBeforeHandleLoad?.(updateQueryBeforeHandleLoad);
+    }, [router, updateQueryBeforeHandleLoad]);
 
     const handleLoad = useCallback(
         async ({page, query}: FetchArgs) => {
