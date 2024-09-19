@@ -27,10 +27,6 @@ const Controls = ({ handleLoadData, tags = [], services = [], queryParams, }) =>
     const handleAnalyticsSaveOnly = (0, page_constructor_1.useAnalytics)(common_1.DefaultEventNames.SaveOnly);
     const { savedOnly: savedOnlyInitial, search: searchInitial, tags: tagInitial, services: servicesInitial, } = queryParams || {};
     const [savedOnly, setSavedOnly] = (0, react_1.useState)(savedOnlyInitial === 'true');
-    const [search, setSearch] = (0, react_1.useState)(searchInitial);
-    (0, react_1.useEffect)(() => {
-        setSearch(searchInitial);
-    }, [searchInitial]);
     const isMobile = (0, react_1.useContext)(MobileContext_1.MobileContext);
     const handleSavedOnly = () => {
         handleAnalyticsSaveOnly();
@@ -47,7 +43,6 @@ const Controls = ({ handleLoadData, tags = [], services = [], queryParams, }) =>
         });
     };
     const handleSearch = (searchValue) => {
-        setSearch(searchValue);
         handleLoadData({
             page: DEFAULT_PAGE,
             query: { search: searchValue, page: DEFAULT_PAGE },
@@ -96,15 +91,15 @@ const Controls = ({ handleLoadData, tags = [], services = [], queryParams, }) =>
         react_1.default.createElement("h1", { className: b('header-item', { title: true }) }, (0, i18n_1.i18n)(i18n_1.Keyset.Title)),
         react_1.default.createElement("div", { className: b('header-item', { filters: true }) },
             react_1.default.createElement("div", { className: b('filter-item') },
-                react_1.default.createElement(Search_1.Search, { className: b('search'), placeholder: (0, i18n_1.i18n)(i18n_1.Keyset.Search), initialValue: search && typeof search === 'string' ? search : '', onSubmit: handleSearch, debounce: 0 })),
+                react_1.default.createElement(Search_1.Search, { className: b('search'), placeholder: (0, i18n_1.i18n)(i18n_1.Keyset.Search), initialValue: searchInitial && typeof searchInitial === 'string' ? searchInitial : '', onSubmit: handleSearch, debounce: 0 })),
             react_1.default.createElement("div", { className: b('filter-item') },
-                react_1.default.createElement(uikit_1.Select, { className: b('select'), size: "xl", options: tagsItems, defaultValue: [tagInitial], onUpdate: handleTagSelect, placeholder: (0, i18n_1.i18n)(i18n_1.Keyset.AllTags), popupClassName: b('popup', { isMobile }), renderControl: (0, customRenders_1.renderSwitcher)({
+                react_1.default.createElement(uikit_1.Select, { className: b('select'), size: "xl", options: tagsItems, defaultValue: [tagInitial], value: [tagInitial], onUpdate: handleTagSelect, placeholder: (0, i18n_1.i18n)(i18n_1.Keyset.AllTags), popupClassName: b('popup', { isMobile }), renderControl: (0, customRenders_1.renderSwitcher)({
                         initial: [tagInitial],
                         list: tagsItems,
                         defaultLabel: (0, i18n_1.i18n)(i18n_1.Keyset.AllTags),
                     }), disablePortal: true, virtualizationThreshold: VIRTUALIZATION_THRESHOLD, renderOption: customRenders_1.renderOption })),
             services.length > 0 ? (react_1.default.createElement("div", { className: b('filter-item') },
-                react_1.default.createElement(uikit_1.Select, { className: b('select'), size: "xl", multiple: true, filterable: true, hasClear: true, disablePortal: true, options: services, defaultValue: servicesItems, popupClassName: b('popup', { isMobile }), onUpdate: handleServicesSelect, placeholder: (0, i18n_1.i18n)(i18n_1.Keyset.AllServices), renderControl: (0, customRenders_1.renderSwitcher)({
+                react_1.default.createElement(uikit_1.Select, { className: b('select'), size: "xl", multiple: true, filterable: true, hasClear: true, disablePortal: true, options: services, defaultValue: servicesItems, value: servicesItems, popupClassName: b('popup', { isMobile }), onUpdate: handleServicesSelect, placeholder: (0, i18n_1.i18n)(i18n_1.Keyset.AllServices), renderControl: (0, customRenders_1.renderSwitcher)({
                         initial: servicesItems,
                         list: services,
                         defaultLabel: (0, i18n_1.i18n)(i18n_1.Keyset.AllServices),

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import { useAnalytics } from '@gravity-ui/page-constructor';
 import { Button, Icon, Select } from '@gravity-ui/uikit';
 import { DefaultGoalIds } from '../../../../constants';
@@ -24,10 +24,6 @@ export const Controls = ({ handleLoadData, tags = [], services = [], queryParams
     const handleAnalyticsSaveOnly = useAnalytics(DefaultEventNames.SaveOnly);
     const { savedOnly: savedOnlyInitial, search: searchInitial, tags: tagInitial, services: servicesInitial, } = queryParams || {};
     const [savedOnly, setSavedOnly] = useState(savedOnlyInitial === 'true');
-    const [search, setSearch] = useState(searchInitial);
-    useEffect(() => {
-        setSearch(searchInitial);
-    }, [searchInitial]);
     const isMobile = useContext(MobileContext);
     const handleSavedOnly = () => {
         handleAnalyticsSaveOnly();
@@ -44,7 +40,6 @@ export const Controls = ({ handleLoadData, tags = [], services = [], queryParams
         });
     };
     const handleSearch = (searchValue) => {
-        setSearch(searchValue);
         handleLoadData({
             page: DEFAULT_PAGE,
             query: { search: searchValue, page: DEFAULT_PAGE },
@@ -93,15 +88,15 @@ export const Controls = ({ handleLoadData, tags = [], services = [], queryParams
         React.createElement("h1", { className: b('header-item', { title: true }) }, i18n(Keyset.Title)),
         React.createElement("div", { className: b('header-item', { filters: true }) },
             React.createElement("div", { className: b('filter-item') },
-                React.createElement(Search, { className: b('search'), placeholder: i18n(Keyset.Search), initialValue: search && typeof search === 'string' ? search : '', onSubmit: handleSearch, debounce: 0 })),
+                React.createElement(Search, { className: b('search'), placeholder: i18n(Keyset.Search), initialValue: searchInitial && typeof searchInitial === 'string' ? searchInitial : '', onSubmit: handleSearch, debounce: 0 })),
             React.createElement("div", { className: b('filter-item') },
-                React.createElement(Select, { className: b('select'), size: "xl", options: tagsItems, defaultValue: [tagInitial], onUpdate: handleTagSelect, placeholder: i18n(Keyset.AllTags), popupClassName: b('popup', { isMobile }), renderControl: renderSwitcher({
+                React.createElement(Select, { className: b('select'), size: "xl", options: tagsItems, defaultValue: [tagInitial], value: [tagInitial], onUpdate: handleTagSelect, placeholder: i18n(Keyset.AllTags), popupClassName: b('popup', { isMobile }), renderControl: renderSwitcher({
                         initial: [tagInitial],
                         list: tagsItems,
                         defaultLabel: i18n(Keyset.AllTags),
                     }), disablePortal: true, virtualizationThreshold: VIRTUALIZATION_THRESHOLD, renderOption: renderOption })),
             services.length > 0 ? (React.createElement("div", { className: b('filter-item') },
-                React.createElement(Select, { className: b('select'), size: "xl", multiple: true, filterable: true, hasClear: true, disablePortal: true, options: services, defaultValue: servicesItems, popupClassName: b('popup', { isMobile }), onUpdate: handleServicesSelect, placeholder: i18n(Keyset.AllServices), renderControl: renderSwitcher({
+                React.createElement(Select, { className: b('select'), size: "xl", multiple: true, filterable: true, hasClear: true, disablePortal: true, options: services, defaultValue: servicesItems, value: servicesItems, popupClassName: b('popup', { isMobile }), onUpdate: handleServicesSelect, placeholder: i18n(Keyset.AllServices), renderControl: renderSwitcher({
                         initial: servicesItems,
                         list: services,
                         defaultLabel: i18n(Keyset.AllServices),

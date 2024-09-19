@@ -17,16 +17,18 @@ const AUTOFOCUS_TIMEOUT = 0;
  *
  * @returns {JSX|null}
  */
-export const Search = ({ className, initialValue, onSubmit, debounce = 300, placeholder = i18n(Keyset.Search), size = 'm', autoFocus = false, value: externalValue, }) => {
+export const Search = ({ className, initialValue, onSubmit, debounce = 300, placeholder = i18n(Keyset.Search), size = 'm', autoFocus = false, }) => {
     const handleChange = lodashDebounce(onSubmit, debounce);
+    const [isSetInitValue, setIsSetInitValue] = useState(false);
     const [value, setValue] = useState(initialValue);
     const inputRef = useRef(null);
     const isIPhone = useIsIPhone();
     useEffect(() => {
-        if (externalValue !== undefined) {
-            setValue(externalValue);
+        if (!isSetInitValue && !value && initialValue) {
+            setIsSetInitValue(true);
+            setValue(initialValue);
         }
-    }, [externalValue]);
+    }, [isSetInitValue, value, initialValue]);
     useEffect(() => {
         if (autoFocus && !isIPhone) {
             setTimeout(() => { var _a; return (_a = inputRef === null || inputRef === void 0 ? void 0 : inputRef.current) === null || _a === void 0 ? void 0 : _a.focus({ preventScroll: true }); }, AUTOFOCUS_TIMEOUT);

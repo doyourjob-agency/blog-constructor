@@ -1,4 +1,4 @@
-import React, {ReactNode, useContext, useEffect, useMemo, useState} from 'react';
+import React, {ReactNode, useContext, useMemo, useState} from 'react';
 
 import {useAnalytics} from '@gravity-ui/page-constructor';
 import {Button, Icon, Select} from '@gravity-ui/uikit';
@@ -56,12 +56,6 @@ export const Controls = ({
     } = queryParams || {};
 
     const [savedOnly, setSavedOnly] = useState<boolean>(savedOnlyInitial === 'true');
-    const [search, setSearch] = useState<string>(searchInitial as string);
-
-    useEffect(() => {
-        setSearch(searchInitial as string);
-    }, [searchInitial]);
-
     const isMobile = useContext(MobileContext);
 
     const handleSavedOnly = () => {
@@ -80,8 +74,6 @@ export const Controls = ({
     };
 
     const handleSearch = (searchValue: string) => {
-        setSearch(searchValue);
-
         handleLoadData({
             page: DEFAULT_PAGE,
             query: {search: searchValue, page: DEFAULT_PAGE},
@@ -151,7 +143,9 @@ export const Controls = ({
                     <Search
                         className={b('search')}
                         placeholder={i18n(Keyset.Search)}
-                        initialValue={search && typeof search === 'string' ? search : ''}
+                        initialValue={
+                            searchInitial && typeof searchInitial === 'string' ? searchInitial : ''
+                        }
                         onSubmit={handleSearch}
                         debounce={0}
                     />
@@ -162,6 +156,7 @@ export const Controls = ({
                         size="xl"
                         options={tagsItems}
                         defaultValue={[tagInitial] as string[]}
+                        value={[tagInitial] as string[]}
                         onUpdate={handleTagSelect}
                         placeholder={i18n(Keyset.AllTags)}
                         popupClassName={b('popup', {isMobile})}
@@ -187,6 +182,7 @@ export const Controls = ({
                             disablePortal
                             options={services}
                             defaultValue={servicesItems}
+                            value={servicesItems}
                             popupClassName={b('popup', {isMobile})}
                             onUpdate={handleServicesSelect}
                             placeholder={i18n(Keyset.AllServices)}
