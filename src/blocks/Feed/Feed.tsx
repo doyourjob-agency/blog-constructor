@@ -122,7 +122,8 @@ export const Feed = ({image}: FeedProps) => {
         async (payload: Query) => {
             if (isRunHandleLoad) return;
 
-            const query = {page: DEFAULT_PAGE, ...payload};
+            const page = Number(payload.page || DEFAULT_PAGE);
+            const query = {...payload, page};
 
             dispatch({type: ActionTypes.QueryParamsChange, payload: query});
 
@@ -130,8 +131,8 @@ export const Feed = ({image}: FeedProps) => {
                 setErrorLoad(false);
                 setIsFetching(true);
 
-                if (query && getPosts) {
-                    const queryParamsForRequest = getFeedQueryParams(query, DEFAULT_PAGE);
+                if (getPosts) {
+                    const queryParamsForRequest = getFeedQueryParams(query, page);
                     const fetchedData = await getPosts(queryParamsForRequest);
                     if (fetchedData) {
                         dispatch({
@@ -140,7 +141,7 @@ export const Feed = ({image}: FeedProps) => {
                                 posts: fetchedData.posts,
                                 pinnedPost: fetchedData.pinnedPost,
                                 count: fetchedData.count,
-                                page: DEFAULT_PAGE,
+                                page,
                             },
                         });
                     }
