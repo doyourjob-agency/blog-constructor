@@ -76,13 +76,14 @@ const Feed = ({ image }) => {
     const updateQueryBeforeHandleLoad = (0, react_1.useCallback)(async (payload) => {
         if (isRunHandleLoad)
             return;
-        const query = Object.assign({ page: constants_2.DEFAULT_PAGE }, payload);
+        const page = Number(payload.page || constants_2.DEFAULT_PAGE);
+        const query = Object.assign(Object.assign({}, payload), { page });
         dispatch({ type: reducer_1.ActionTypes.QueryParamsChange, payload: query });
         try {
             setErrorLoad(false);
             setIsFetching(true);
-            if (query && getPosts) {
-                const queryParamsForRequest = (0, common_2.getFeedQueryParams)(query, constants_2.DEFAULT_PAGE);
+            if (getPosts) {
+                const queryParamsForRequest = (0, common_2.getFeedQueryParams)(query, page);
                 const fetchedData = await getPosts(queryParamsForRequest);
                 if (fetchedData) {
                     dispatch({
@@ -91,7 +92,7 @@ const Feed = ({ image }) => {
                             posts: fetchedData.posts,
                             pinnedPost: fetchedData.pinnedPost,
                             count: fetchedData.count,
-                            page: constants_2.DEFAULT_PAGE,
+                            page,
                         },
                     });
                 }
