@@ -12,7 +12,7 @@ const b = block('posts');
 export const Posts = ({ containerId, pinnedPostOnPage, currentPage, postsOnPage, isShowMoreVisible, errorShowMore, postCountOnPage, perPageInQuery, isFetching, handleShowMore, handlePageChange, pageCountForShowSupportButtons, queryParams, }) => (React.createElement("div", { className: b() },
     isFetching && React.createElement("div", { className: b('loaderContainer') }),
     React.createElement("div", { id: containerId, className: b('cards-container', { isLoading: isFetching }) },
-        pinnedPostOnPage && currentPage === 1 && (React.createElement("div", { className: b('pinned-container') },
+        pinnedPostOnPage && (React.createElement("div", { className: b('pinned-container') },
             React.createElement(PostCard, { post: pinnedPostOnPage, size: PostCardSize.MEDIUM, fullWidth: true, showTag: true, titleHeadingLevel: PostCardTitleHeadingLevel.H2 }))),
         (postsOnPage === null || postsOnPage === void 0 ? void 0 : postsOnPage.length) ? (React.createElement(CardLayoutBlock, { title: '', colSizes: {
                 all: 12,

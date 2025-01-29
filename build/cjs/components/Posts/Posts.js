@@ -15,7 +15,7 @@ const b = (0, cn_1.block)('posts');
 const Posts = ({ containerId, pinnedPostOnPage, currentPage, postsOnPage, isShowMoreVisible, errorShowMore, postCountOnPage, perPageInQuery, isFetching, handleShowMore, handlePageChange, pageCountForShowSupportButtons, queryParams, }) => (react_1.default.createElement("div", { className: b() },
     isFetching && react_1.default.createElement("div", { className: b('loaderContainer') }),
     react_1.default.createElement("div", { id: containerId, className: b('cards-container', { isLoading: isFetching }) },
-        pinnedPostOnPage && currentPage === 1 && (react_1.default.createElement("div", { className: b('pinned-container') },
+        pinnedPostOnPage && (react_1.default.createElement("div", { className: b('pinned-container') },
             react_1.default.createElement(PostCard_1.PostCard, { post: pinnedPostOnPage, size: common_1.PostCardSize.MEDIUM, fullWidth: true, showTag: true, titleHeadingLevel: common_1.PostCardTitleHeadingLevel.H2 }))),
         (postsOnPage === null || postsOnPage === void 0 ? void 0 : postsOnPage.length) ? (react_1.default.createElement(page_constructor_1.CardLayoutBlock, { title: '', colSizes: {
                 all: 12,

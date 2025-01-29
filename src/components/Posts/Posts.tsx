@@ -50,7 +50,7 @@ export const Posts = ({
     <div className={b()}>
         {isFetching && <div className={b('loaderContainer')} />}
         <div id={containerId} className={b('cards-container', {isLoading: isFetching})}>
-            {pinnedPostOnPage && currentPage === 1 && (
+            {pinnedPostOnPage && (
                 <div className={b('pinned-container')}>
                     <PostCard
                         post={pinnedPostOnPage}
