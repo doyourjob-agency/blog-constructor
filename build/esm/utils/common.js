@@ -1,5 +1,4 @@
 import { __rest } from "tslib";
-import { format, parse } from 'url';
 import camelCase from 'lodash/camelCase';
 import debounce from 'lodash/debounce';
 import flatten from 'lodash/flatten';
@@ -9,11 +8,21 @@ import { Keyset, i18n } from '../i18n';
 import { AnalyticsCounter } from '../counters/utils';
 const QA_ATTRIBUTES_KEYS = ['container', 'content', 'wrapper', 'image', 'button'];
 export function getAbsolutePath(router, url) {
-    if (!router || !router.pathname) {
+    if (!router || !router.hostname || !router.pathname) {
         return url !== null && url !== void 0 ? url : '';
     }
-    const parsed = parse(url || router.as || '');
-    return format(Object.assign(Object.assign({}, parsed), { protocol: parsed.protocol || 'https', hostname: parsed.hostname || router.hostname, pathname: parsed.pathname || router.pathname }));
+    try {
+        if (url && /^https?:\/\//.test(url)) {
+            return url;
+        }
+        const hasProtocol = /^https?:\/\//.test(router.hostname);
+        const base = hasProtocol ? router.hostname : `https://${router.hostname}`;
+        const resolvedUrl = new URL(url || router.as || router.pathname, base);
+        return resolvedUrl.toString();
+    }
+    catch (e) {
+        return url !== null && url !== void 0 ? url : '';
+    }
 }
 export const getPageSearchParams = (query = {}) => {
     const searchParams = new URLSearchParams();

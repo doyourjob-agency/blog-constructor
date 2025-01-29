@@ -1,5 +1,3 @@
-import {format, parse} from 'url';
-
 import {
     AnalyticsEvent,
     AnalyticsEventsProp,
@@ -35,18 +33,24 @@ export interface RouterActionOptions {
 }
 
 export function getAbsolutePath(router: RouterContextProps, url?: string) {
-    if (!router || !router.pathname) {
+    if (!router || !router.hostname || !router.pathname) {
         return url ?? '';
     }
 
-    const parsed = parse(url || router.as || '');
+    try {
+        if (url && /^https?:\/\//.test(url)) {
+            return url;
+        }
 
-    return format({
-        ...parsed,
-        protocol: parsed.protocol || 'https',
-        hostname: parsed.hostname || router.hostname,
-        pathname: parsed.pathname || router.pathname,
-    });
+        const hasProtocol = /^https?:\/\//.test(router.hostname);
+        const base = hasProtocol ? router.hostname : `https://${router.hostname}`;
+
+        const resolvedUrl = new URL(url || router.as || router.pathname, base);
+
+        return resolvedUrl.toString();
+    } catch (e) {
+        return url ?? '';
+    }
 }
 
 export const getPageSearchParams = (query: Query = {}) => {

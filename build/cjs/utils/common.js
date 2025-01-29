@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.prepareAnalyticsEvent = exports.getQaAttributes = exports.scrollOnPageChange = exports.getFeedQueryParams = exports.getMergedAnalyticsEvents = exports.getBreadcrumbs = exports.getBlogPath = exports.updateContentSizes = exports.postLikeStatus = exports.getTags = exports.scrollToHash = exports.getPageSearchParams = exports.getAbsolutePath = void 0;
 const tslib_1 = require("tslib");
-const url_1 = require("url");
 const camelCase_1 = tslib_1.__importDefault(require("lodash/camelCase"));
 const debounce_1 = tslib_1.__importDefault(require("lodash/debounce"));
 const flatten_1 = tslib_1.__importDefault(require("lodash/flatten"));
@@ -12,11 +11,21 @@ const i18n_1 = require("../i18n");
 const utils_1 = require("../counters/utils");
 const QA_ATTRIBUTES_KEYS = ['container', 'content', 'wrapper', 'image', 'button'];
 function getAbsolutePath(router, url) {
-    if (!router || !router.pathname) {
+    if (!router || !router.hostname || !router.pathname) {
         return url !== null && url !== void 0 ? url : '';
     }
-    const parsed = (0, url_1.parse)(url || router.as || '');
-    return (0, url_1.format)(Object.assign(Object.assign({}, parsed), { protocol: parsed.protocol || 'https', hostname: parsed.hostname || router.hostname, pathname: parsed.pathname || router.pathname }));
+    try {
+        if (url && /^https?:\/\//.test(url)) {
+            return url;
+        }
+        const hasProtocol = /^https?:\/\//.test(router.hostname);
+        const base = hasProtocol ? router.hostname : `https://${router.hostname}`;
+        const resolvedUrl = new URL(url || router.as || router.pathname, base);
+        return resolvedUrl.toString();
+    }
+    catch (e) {
+        return url !== null && url !== void 0 ? url : '';
+    }
 }
 exports.getAbsolutePath = getAbsolutePath;
 const getPageSearchParams = (query = {}) => {
