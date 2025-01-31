@@ -11,7 +11,13 @@ import './Media.scss';
 
 const b = block('media');
 
-export const Media = ({text, paddingTop, paddingBottom, ...mediaProps}: MediaProps) => (
+export const Media = ({
+    text,
+    paddingTop,
+    paddingBottom,
+    border = true,
+    ...mediaProps
+}: MediaProps) => (
     <Wrapper
         paddings={{
             [PaddingsDirections.top]: paddingTop,
@@ -19,7 +25,7 @@ export const Media = ({text, paddingTop, paddingBottom, ...mediaProps}: MediaPro
         }}
         className={b('container')}
     >
-        <div className={b('border')} data-qa="blog-media-content">
+        <div className={border ? b('border') : ''} data-qa="blog-media-content">
             <PCMedia
                 className={b('content')}
                 videoClassName={b('video')}

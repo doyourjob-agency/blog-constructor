@@ -1398,6 +1398,9 @@ export declare const schemasForCustom: {
                         type: string;
                         contentType: string;
                     };
+                    border: {
+                        type: string;
+                    };
                     color: {
                         type: string;
                     };

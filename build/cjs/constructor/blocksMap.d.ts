@@ -2,7 +2,7 @@ declare const _default: {
     blocks: {
         "blog-yfm-block": (props: import("../models/blocks").YFMProps) => import("react").JSX.Element;
         "blog-layout-block": ({ fullWidth, mobileOrder, children, paddingTop, paddingBottom, }: import("react").PropsWithChildren<import("../models/blocks").LayoutProps>) => import("react").JSX.Element;
-        "blog-media-block": ({ text, paddingTop, paddingBottom, ...mediaProps }: import("../models/blocks").MediaProps) => import("react").JSX.Element;
+        "blog-media-block": ({ text, paddingTop, paddingBottom, border, ...mediaProps }: import("../models/blocks").MediaProps) => import("react").JSX.Element;
         "blog-banner-block": ({ color, imageSize, image, paddingTop, paddingBottom, qa, ...content }: import("../models/blocks").BannerProps) => import("react").JSX.Element;
         "blog-cta-block": ({ items, paddingTop, paddingBottom, qa }: import("../models/blocks").CTAProps) => import("react").JSX.Element;
         "blog-colored-text-block": ({ background, paddingTop, paddingBottom, qa, ...content }: import("../models/blocks").ColoredTextProps) => import("react").JSX.Element;

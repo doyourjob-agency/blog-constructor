@@ -7,6 +7,9 @@ export declare const Media: {
                 type: string;
                 contentType: string;
             };
+            border: {
+                type: string;
+            };
             color: {
                 type: string;
             };

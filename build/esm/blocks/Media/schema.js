@@ -9,6 +9,8 @@ export const Media = {
         properties: Object.assign(Object.assign(Object.assign(Object.assign({}, BlockBaseProps), BlogBlockBase), MediaProps), { text: {
                 type: 'string',
                 contentType: 'text',
+            }, border: {
+                type: 'boolean'
             } }),
     },
 };

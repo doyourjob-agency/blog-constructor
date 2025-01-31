@@ -7,12 +7,12 @@ import { block } from '../../utils/cn';
 import './Media.css';
 const b = block('media');
 export const Media = (_a) => {
-    var { text, paddingTop, paddingBottom } = _a, mediaProps = __rest(_a, ["text", "paddingTop", "paddingBottom"]);
+    var { text, paddingTop, paddingBottom, border = true } = _a, mediaProps = __rest(_a, ["text", "paddingTop", "paddingBottom", "border"]);
     return (React.createElement(Wrapper, { paddings: {
             [PaddingsDirections.top]: paddingTop,
             [PaddingsDirections.bottom]: paddingBottom,
         }, className: b('container') },
-        React.createElement("div", { className: b('border'), "data-qa": "blog-media-content" },
+        React.createElement("div", { className: border ? b('border') : '', "data-qa": "blog-media-content" },
             React.createElement(PCMedia, Object.assign({ className: b('content'), videoClassName: b('video'), imageClassName: b('image') }, mediaProps))),
         text && (React.createElement("div", { className: b('text-content') },
             React.createElement(YFMWrapper, { content: text, modifiers: {

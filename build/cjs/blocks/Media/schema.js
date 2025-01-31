@@ -12,6 +12,8 @@ exports.Media = {
         properties: Object.assign(Object.assign(Object.assign(Object.assign({}, BlockBaseProps), common_2.BlogBlockBase), MediaProps), { text: {
                 type: 'string',
                 contentType: 'text',
+            }, border: {
+                type: 'boolean'
             } }),
     },
 };

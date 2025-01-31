@@ -50,6 +50,8 @@ export type MediaProps = ClassNameProps &
     PaddingsYFMProps &
     Partial<Pick<PCMediaProps, 'youtube' | 'previewImg' | 'image' | 'video' | 'dataLens'>> & {
         text?: string;
+    } & {
+        border?: boolean;
     };
 
 export type MetaProps = QAProps & {
