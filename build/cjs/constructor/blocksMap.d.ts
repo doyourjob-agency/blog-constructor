@@ -11,6 +11,7 @@ declare const _default: {
         "blog-meta-block": (props: import("../models/blocks").MetaProps) => import("react").JSX.Element;
         "blog-feed-block": ({ image }: import("../models/blocks").FeedProps) => import("react").JSX.Element;
         "blog-form-block": ({ paddingTop, paddingBottom, ...props }: import("../models/blocks").FormProps) => import("react").JSX.Element | null;
+        "blog-documents-block": (props: import("../models/blocks").DocumentsProps) => import("react").JSX.Element;
     };
     headers: {
         "blog-header-block": (props: import("../models/blocks").HeaderProps) => import("react").JSX.Element;

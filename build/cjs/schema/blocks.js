@@ -11,3 +11,4 @@ tslib_1.__exportStar(require("../blocks/Media/schema"), exports);
 tslib_1.__exportStar(require("../blocks/Meta/schema"), exports);
 tslib_1.__exportStar(require("../blocks/Suggest/schema"), exports);
 tslib_1.__exportStar(require("../blocks/YFM/schema"), exports);
+tslib_1.__exportStar(require("../blocks/Documents/schema"), exports);

@@ -85,6 +85,10 @@ export interface PostData {
     url: string;
     noIndex?: boolean;
 }
+export interface DocumentData {
+    name: string;
+    link: string;
+}
 export declare enum BlockType {
     Header = "blog-header-block",
     YFM = "blog-yfm-block",
@@ -97,7 +101,8 @@ export declare enum BlockType {
     Suggest = "blog-suggest-block",
     Meta = "blog-meta-block",
     Feed = "blog-feed-block",
-    Form = "blog-form-block"
+    Form = "blog-form-block",
+    Documents = "blog-documents-block"
 }
 export type MetaProps = {
     metaComponent: JSX.Element;

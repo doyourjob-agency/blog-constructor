@@ -17,6 +17,7 @@ export var BlockType;
     BlockType["Meta"] = "blog-meta-block";
     BlockType["Feed"] = "blog-feed-block";
     BlockType["Form"] = "blog-form-block";
+    BlockType["Documents"] = "blog-documents-block";
 })(BlockType || (BlockType = {}));
 export var DefaultEventNames;
 (function (DefaultEventNames) {

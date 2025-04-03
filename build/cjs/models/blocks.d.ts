@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { ContentBlockProps, FormBlockData, HeaderBlockProps, MediaProps as PCMediaProps, TextTheme } from '@gravity-ui/page-constructor';
-import { BlockType, ClassNameProps, PostData, QAProps } from './common';
+import { BlockType, ClassNameProps, DocumentData, PostData, QAProps } from './common';
 import { PaddingsYFMProps } from './paddings';
 export type AuthorProps = ClassNameProps & {
     authorId: number | string;
@@ -49,6 +49,10 @@ export type FormProps = {
     formData: FormBlockData;
     border?: 'shadow' | 'line' | 'none';
 } & PaddingsYFMProps & QAProps;
+export type DocumentsProps = ClassNameProps & {
+    withSticky?: boolean;
+    items: Array<DocumentData>;
+} & PaddingsYFMProps & QAProps;
 export type AuthorBlockModel = {
     type: BlockType.Author;
 } & AuthorProps;
@@ -85,7 +89,10 @@ export type FeedBlockModel = {
 export type FormBlockModel = {
     type: BlockType.Form;
 } & FormProps;
-export type BlockModel = AuthorBlockModel | BannerBlockModel | ColoredTextBlockModel | CTABlockModel | HeaderBlockModel | LayoutBlockModel | MediaBlockModel | MetaBlockModel | SuggestBlockModel | YFMBlockModel | FeedBlockModel;
+export type DocumentsBlockModel = {
+    type: BlockType.Documents;
+} & DocumentsProps;
+export type BlockModel = AuthorBlockModel | BannerBlockModel | ColoredTextBlockModel | CTABlockModel | HeaderBlockModel | LayoutBlockModel | MediaBlockModel | MetaBlockModel | SuggestBlockModel | YFMBlockModel | FeedBlockModel | DocumentsBlockModel;
 export type Block = BlockModel & {
     [x: string]: any;
 };

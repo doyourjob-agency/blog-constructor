@@ -13,7 +13,7 @@ exports.Media = {
                 type: 'string',
                 contentType: 'text',
             }, border: {
-                type: 'boolean'
+                type: 'boolean',
             } }),
     },
 };

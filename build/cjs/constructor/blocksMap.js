@@ -12,6 +12,7 @@ const Media_1 = require("../blocks/Media/Media");
 const Meta_1 = require("../blocks/Meta/Meta");
 const Suggest_1 = require("../blocks/Suggest/Suggest");
 const YFM_1 = require("../blocks/YFM/YFM");
+const Documents_1 = require("../blocks/Documents/Documents");
 const common_1 = require("../models/common");
 const blocks = {
     [common_1.BlockType.YFM]: YFM_1.YFM,
@@ -25,6 +26,7 @@ const blocks = {
     [common_1.BlockType.Meta]: Meta_1.Meta,
     [common_1.BlockType.Feed]: Feed_1.Feed,
     [common_1.BlockType.Form]: Form_1.Form,
+    [common_1.BlockType.Documents]: Documents_1.Documents,
 };
 const headers = {
     [common_1.BlockType.Header]: Header_1.Header,
