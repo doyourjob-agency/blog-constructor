@@ -8,7 +8,7 @@ import {
     TextTheme,
 } from '@gravity-ui/page-constructor';
 
-import {BlockType, ClassNameProps, PostData, QAProps} from './common';
+import {BlockType, ClassNameProps, DocumentData, PostData, QAProps} from './common';
 import {PaddingsYFMProps} from './paddings';
 
 // blocks props
@@ -78,6 +78,12 @@ export type FormProps = {
 } & PaddingsYFMProps &
     QAProps;
 
+export type DocumentsProps = ClassNameProps & {
+    withSticky?: boolean;
+    items: Array<DocumentData>;
+} & PaddingsYFMProps &
+    QAProps;
+
 // blocks models
 export type AuthorBlockModel = {
     type: BlockType.Author;
@@ -127,6 +133,10 @@ export type FormBlockModel = {
     type: BlockType.Form;
 } & FormProps;
 
+export type DocumentsBlockModel = {
+    type: BlockType.Documents;
+} & DocumentsProps;
+
 export type BlockModel =
     | AuthorBlockModel
     | BannerBlockModel
@@ -138,7 +148,8 @@ export type BlockModel =
     | MetaBlockModel
     | SuggestBlockModel
     | YFMBlockModel
-    | FeedBlockModel;
+    | FeedBlockModel
+    | DocumentsBlockModel;
 
 export type Block = BlockModel & {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

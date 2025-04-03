@@ -10,6 +10,7 @@ import {Media} from '../blocks/Media/Media';
 import {Meta} from '../blocks/Meta/Meta';
 import {Suggest} from '../blocks/Suggest/Suggest';
 import {YFM} from '../blocks/YFM/YFM';
+import {Documents} from '../blocks/Documents/Documents';
 import {BlockType} from '../models/common';
 
 const blocks = {
@@ -24,6 +25,7 @@ const blocks = {
     [BlockType.Meta]: Meta,
     [BlockType.Feed]: Feed,
     [BlockType.Form]: Form,
+    [BlockType.Documents]: Documents,
 };
 
 const headers = {

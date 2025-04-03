@@ -1,0 +1,29 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+$block: '.#{$namespace}documents';
+
+#{$block} {
+    $root: &;
+
+    &__content_withSticky {
+        position: sticky;
+        top: 0;
+    }
+
+    &__list {
+        @include reset-list-style();
+
+        display: grid;
+        grid-row-gap: 8px;
+    }
+
+    &__item {
+        @include reset-link-style();
+
+        display: grid;
+        grid-template-columns: 12px 1fr;
+        grid-column-gap: 8px;
+        align-items: center;
+    }
+}

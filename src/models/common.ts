@@ -101,6 +101,11 @@ export interface PostData {
     noIndex?: boolean;
 }
 
+export interface DocumentData {
+    name: string;
+    link: string;
+}
+
 export enum BlockType {
     Header = 'blog-header-block',
     YFM = 'blog-yfm-block',
@@ -114,6 +119,7 @@ export enum BlockType {
     Meta = 'blog-meta-block',
     Feed = 'blog-feed-block',
     Form = 'blog-form-block',
+    Documents = 'blog-documents-block',
 }
 
 export type MetaProps = {
