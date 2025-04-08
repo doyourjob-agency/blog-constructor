@@ -39,12 +39,12 @@ export const Meta = (props: MetaProps) => {
     const {post} = useContext(PostPageContext);
     const {locale} = useContext(LocaleContext);
     const qaAttributes = getQaAttributes(qa, 'post-info');
-    const {getBlogPath = getDefaultBlogPath} = useContext(SettingsContext);
+    const {getBlogPath = getDefaultBlogPath, blogTitle} = useContext(SettingsContext);
     const blogPath = getBlogPath(locale.pathPrefix || '');
 
     const {title, id, date, readingTime, tags} = post;
 
-    const breadcrumbs = getBreadcrumbs({tags, blogPath});
+    const breadcrumbs = getBreadcrumbs({tags, blogTitle, blogPath});
 
     breadcrumbs.analyticsEvents = getMergedAnalyticsEvents(breadcrumbsGoals);
 

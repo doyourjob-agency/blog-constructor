@@ -110,6 +110,7 @@ export const updateContentSizes = ({size, colSizes, theme, ...contentData}: Cont
 
 type GetBreadcrumbsProps = {
     tags?: Tag[];
+    blogTitle?: string;
     blogPath: string;
 };
 
@@ -118,9 +119,9 @@ export const getBlogPath = (pathPrefix: string) => {
     return `${prefix}/blog`;
 };
 
-export const getBreadcrumbs = ({tags, blogPath}: GetBreadcrumbsProps) => {
+export const getBreadcrumbs = ({tags, blogTitle, blogPath}: GetBreadcrumbsProps) => {
     const breadcrumbs: HeaderBreadCrumbsProps = {
-        items: [{text: i18n(Keyset.TitleBreadcrumbs), url: blogPath}],
+        items: [{text: blogTitle || i18n(Keyset.TitleBreadcrumbs), url: blogPath}],
         theme: 'light',
     };
 
