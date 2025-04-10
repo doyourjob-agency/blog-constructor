@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface SettingsContextProps {
     addNavigationLinkForPages?: boolean;
-
+    blogTitle?: string;
     getBlogPath?: (pathPrefix: string) => string;
 }
 

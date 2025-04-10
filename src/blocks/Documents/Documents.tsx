@@ -20,6 +20,7 @@ export const Documents = (props: DocumentsProps) => {
             }}
             className={b('content', {withSticky})}
             qa={qa}
+            data-testid={qa}
         >
             <ul className={b('list')}>
                 {items.map((item, index) => (
