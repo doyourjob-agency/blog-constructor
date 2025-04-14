@@ -59,6 +59,10 @@ export declare const Feed: {
                 type: string;
                 enum: string[];
             };
+            hidden: {
+                type: string;
+                enum: string[];
+            };
             resetPaddings: {
                 type: string;
             };

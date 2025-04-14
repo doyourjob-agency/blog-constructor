@@ -42,6 +42,10 @@ export declare const Suggest: {
                 type: string;
                 enum: string[];
             };
+            hidden: {
+                type: string;
+                enum: string[];
+            };
             resetPaddings: {
                 type: string;
             };

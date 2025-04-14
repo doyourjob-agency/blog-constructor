@@ -99,6 +99,10 @@ export declare const Media: {
                 type: string;
                 enum: string[];
             };
+            hidden: {
+                type: string;
+                enum: string[];
+            };
             resetPaddings: {
                 type: string;
             };

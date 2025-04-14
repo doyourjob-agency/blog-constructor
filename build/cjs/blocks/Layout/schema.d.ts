@@ -53,6 +53,10 @@ export declare const Layout: {
                 type: string;
                 enum: string[];
             };
+            hidden: {
+                type: string;
+                enum: string[];
+            };
             resetPaddings: {
                 type: string;
             };

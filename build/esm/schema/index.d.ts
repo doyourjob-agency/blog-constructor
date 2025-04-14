@@ -651,6 +651,10 @@ export declare const schemasForCustom: {
                         type: string;
                         enum: string[];
                     };
+                    hidden: {
+                        type: string;
+                        enum: string[];
+                    };
                     resetPaddings: {
                         type: string;
                     };
@@ -726,6 +730,10 @@ export declare const schemasForCustom: {
                         };
                     };
                     visible: {
+                        type: string;
+                        enum: string[];
+                    };
+                    hidden: {
                         type: string;
                         enum: string[];
                     };
@@ -909,6 +917,10 @@ export declare const schemasForCustom: {
                         };
                     };
                     visible: {
+                        type: string;
+                        enum: string[];
+                    };
+                    hidden: {
                         type: string;
                         enum: string[];
                     };
@@ -1125,6 +1137,10 @@ export declare const schemasForCustom: {
                         type: string;
                         enum: string[];
                     };
+                    hidden: {
+                        type: string;
+                        enum: string[];
+                    };
                     resetPaddings: {
                         type: string;
                     };
@@ -1308,6 +1324,10 @@ export declare const schemasForCustom: {
                         type: string;
                         enum: string[];
                     };
+                    hidden: {
+                        type: string;
+                        enum: string[];
+                    };
                     resetPaddings: {
                         type: string;
                     };
@@ -1397,6 +1417,10 @@ export declare const schemasForCustom: {
                         type: string;
                         enum: string[];
                     };
+                    hidden: {
+                        type: string;
+                        enum: string[];
+                    };
                     resetPaddings: {
                         type: string;
                     };
@@ -1477,6 +1501,10 @@ export declare const schemasForCustom: {
                         };
                     };
                     visible: {
+                        type: string;
+                        enum: string[];
+                    };
+                    hidden: {
                         type: string;
                         enum: string[];
                     };
@@ -1862,6 +1890,10 @@ export declare const schemasForCustom: {
                         type: string;
                         enum: string[];
                     };
+                    hidden: {
+                        type: string;
+                        enum: string[];
+                    };
                     resetPaddings: {
                         type: string;
                     };
@@ -1934,6 +1966,10 @@ export declare const schemasForCustom: {
                         type: string;
                         enum: string[];
                     };
+                    hidden: {
+                        type: string;
+                        enum: string[];
+                    };
                     resetPaddings: {
                         type: string;
                     };
@@ -2003,6 +2039,10 @@ export declare const schemasForCustom: {
                         };
                     };
                     visible: {
+                        type: string;
+                        enum: string[];
+                    };
+                    hidden: {
                         type: string;
                         enum: string[];
                     };
@@ -2080,6 +2120,10 @@ export declare const schemasForCustom: {
                         };
                     };
                     visible: {
+                        type: string;
+                        enum: string[];
+                    };
+                    hidden: {
                         type: string;
                         enum: string[];
                     };
