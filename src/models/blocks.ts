@@ -73,7 +73,7 @@ export type FeedProps = {
 };
 
 export type FormProps = {
-    formData: FormBlockData;
+    formData?: FormBlockData;
     border?: 'shadow' | 'line' | 'none';
 } & PaddingsYFMProps &
     QAProps;

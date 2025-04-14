@@ -7,7 +7,7 @@ import {Meta, StoryFn} from '@storybook/react';
 import formsData from '../../../../.mocks/forms.json';
 import {FormBlockModel} from '../../../models/blocks';
 import {Form} from '../Form';
-import {FormBlockProps, isHubspotDataForm} from '@gravity-ui/page-constructor';
+import {FormBlockProps, isHubspotDataForm, isYandexDataForm} from '@gravity-ui/page-constructor';
 
 export default {
     title: 'Blocks/Form',
@@ -20,9 +20,15 @@ export default {
 const __getFormData = (formData: FormBlockModel['formData']) => {
     const id = uuidv4();
 
-    return isHubspotDataForm(formData)
-        ? {hubspot: {...formData.hubspot, formInstanceId: id}}
-        : {yandex: formData.yandex};
+    if (isHubspotDataForm(formData)) {
+        return {hubspot: {...formData.hubspot, formInstanceId: id}};
+    }
+
+    if (isYandexDataForm(formData)) {
+        return {yandex: formData.yandex};
+    }
+
+    return undefined;
 };
 
 const ContentDirectionTemplate: StoryFn<FormBlockModel> = (args) => {
