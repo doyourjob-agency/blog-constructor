@@ -13,7 +13,7 @@ const Documents = (props) => {
     return (react_1.default.createElement(Wrapper_1.Wrapper, { paddings: {
             [paddings_1.PaddingsDirections.top]: paddingTop,
             [paddings_1.PaddingsDirections.bottom]: paddingBottom,
-        }, className: b('content', { withSticky }), qa: qa },
+        }, className: b('content', { withSticky }), qa: qa, "data-testid": qa },
         react_1.default.createElement("ul", { className: b('list') }, items.map((item, index) => (react_1.default.createElement("li", { key: String(index) },
             react_1.default.createElement("a", { className: b('item'), href: item.link, target: "_blank", rel: "noreferrer" },
                 react_1.default.createElement(Document_1.Document, null),

@@ -69,9 +69,9 @@ const getBlogPath = (pathPrefix) => {
     return `${prefix}/blog`;
 };
 exports.getBlogPath = getBlogPath;
-const getBreadcrumbs = ({ tags, blogPath }) => {
+const getBreadcrumbs = ({ tags, blogTitle, blogPath }) => {
     const breadcrumbs = {
-        items: [{ text: (0, i18n_1.i18n)(i18n_1.Keyset.TitleBreadcrumbs), url: blogPath }],
+        items: [{ text: blogTitle || (0, i18n_1.i18n)(i18n_1.Keyset.TitleBreadcrumbs), url: blogPath }],
         theme: 'light',
     };
     if (tags === null || tags === void 0 ? void 0 : tags.length) {

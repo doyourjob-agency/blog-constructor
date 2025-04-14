@@ -1,8 +1,8 @@
 /* use this for style redefinitions to awoid problems with
 unpredictable css rules order in build */
 .bc-feed-custom-switcher__custom-switcher {
-  font-size: var(--g-text-body-2-font-size);
-  line-height: var(--g-text-body-2-line-height);
+  font-size: var(--g-text-body-2-font-size, var(--pc-text-body-2-font-size));
+  line-height: var(--g-text-body-2-line-height, var(--pc-text-body-2-line-height));
   position: relative;
   display: flex;
   flex-direction: row;
@@ -56,8 +56,8 @@ unpredictable css rules order in build */
   background-color: var(--g-color-base-selection);
   border-radius: 4px;
   transition: backgound-color 0.1s linear;
-  font-size: var(--g-text-body-1-font-size);
-  line-height: var(--g-text-body-1-line-height);
+  font-size: var(--g-text-body-1-font-size, var(--pc-text-body-1-font-size));
+  line-height: var(--g-text-body-1-line-height, var(--pc-text-body-1-line-height));
 }
 .bc-feed-custom-switcher__custom-switcher-element_arrow {
   display: flex;

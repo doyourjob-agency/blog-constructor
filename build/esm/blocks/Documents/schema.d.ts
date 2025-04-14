@@ -81,6 +81,9 @@ export declare const Documents: {
                     };
                 };
             };
+            backgroundFull: {
+                type: string;
+            };
             type: {};
             when: {
                 type: string;

@@ -65,6 +65,9 @@ export declare const YFM: {
                     };
                 };
             };
+            backgroundFull: {
+                type: string;
+            };
             type: {};
             when: {
                 type: string;

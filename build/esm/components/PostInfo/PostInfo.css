@@ -1,8 +1,8 @@
 /* use this for style redefinitions to awoid problems with
 unpredictable css rules order in build */
 .bc-post-info__item {
-  font-size: var(--g-text-body-2-font-size);
-  line-height: var(--g-text-body-2-line-height);
+  font-size: var(--g-text-body-2-font-size, var(--pc-text-body-2-font-size));
+  line-height: var(--g-text-body-2-line-height, var(--pc-text-body-2-line-height));
   display: flex;
   padding-right: 24px;
   padding-top: 12px;
@@ -10,12 +10,12 @@ unpredictable css rules order in build */
   align-items: center;
 }
 .bc-post-info__item_size_s {
-  font-size: var(--g-text-body-2-font-size);
-  line-height: var(--g-text-body-2-line-height);
+  font-size: var(--g-text-body-2-font-size, var(--pc-text-body-2-font-size));
+  line-height: var(--g-text-body-2-line-height, var(--pc-text-body-2-line-height));
 }
 .bc-post-info__item_size_m {
-  font-size: var(--g-text-body-3-font-size);
-  line-height: var(--g-text-body-3-line-height);
+  font-size: var(--g-text-body-3-font-size, var(--pc-text-body-3-font-size));
+  line-height: var(--g-text-body-3-line-height, var(--pc-text-body-3-line-height));
 }
 .bc-post-info__item_save {
   background: none;
@@ -26,8 +26,8 @@ unpredictable css rules order in build */
   cursor: pointer;
 }
 .bc-post-info__item:last-child {
-  font-size: var(--g-text-body-2-font-size);
-  line-height: var(--g-text-body-2-line-height);
+  font-size: var(--g-text-body-2-font-size, var(--pc-text-body-2-font-size));
+  line-height: var(--g-text-body-2-line-height, var(--pc-text-body-2-line-height));
   display: flex;
   padding-right: 0px;
   padding-top: 12px;

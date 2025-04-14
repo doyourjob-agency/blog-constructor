@@ -163,9 +163,15 @@ export declare const Media: {
                     ariaLabel: {
                         type: string;
                     };
+                    contain: {
+                        type: string;
+                    };
                 };
             };
             youtube: {
+                type: string;
+            };
+            videoIframe: {
                 type: string;
             };
             parallax: {
@@ -279,7 +285,8 @@ export declare const Media: {
                 })[];
             };
             ratio: {
-                type: string;
+                type: string[];
+                pattern: string;
             };
             iframe: {
                 type: string;
@@ -362,6 +369,9 @@ export declare const Media: {
                         enum: string[];
                     };
                 };
+            };
+            backgroundFull: {
+                type: string;
             };
             type: {};
             when: {

@@ -1,8 +1,8 @@
 /* use this for style redefinitions to awoid problems with
 unpredictable css rules order in build */
 .bc-search {
-  font-size: var(--g-text-body-1-font-size);
-  line-height: var(--g-text-body-1-line-height);
+  font-size: var(--g-text-body-1-font-size, var(--pc-text-body-1-font-size));
+  line-height: var(--g-text-body-1-line-height, var(--pc-text-body-1-line-height));
   position: relative;
   display: flex;
   align-items: center;

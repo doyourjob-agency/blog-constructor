@@ -166,6 +166,9 @@ export declare const schemasForCustom: {
                                 ariaLabel: {
                                     type: string;
                                 };
+                                contain: {
+                                    type: string;
+                                };
                             };
                         } & {
                             optionName: string;
@@ -367,9 +370,15 @@ export declare const schemasForCustom: {
                                         ariaLabel: {
                                             type: string;
                                         };
+                                        contain: {
+                                            type: string;
+                                        };
                                     };
                                 };
                                 youtube: {
+                                    type: string;
+                                };
+                                videoIframe: {
                                     type: string;
                                 };
                                 parallax: {
@@ -483,7 +492,8 @@ export declare const schemasForCustom: {
                                     })[];
                                 };
                                 ratio: {
-                                    type: string;
+                                    type: string[];
+                                    pattern: string;
                                 };
                                 iframe: {
                                     type: string;
@@ -556,6 +566,52 @@ export declare const schemasForCustom: {
                     status: {
                         type: string;
                     };
+                    topTags: {
+                        type: string;
+                        items: {
+                            type: string;
+                            additionalProperties: boolean;
+                            required: string[];
+                            properties: {
+                                text: {
+                                    type: string;
+                                };
+                                url: {
+                                    type: string;
+                                };
+                                icon: {
+                                    type: string;
+                                    enum: string[];
+                                };
+                                target: {
+                                    type: string;
+                                };
+                            };
+                        };
+                    };
+                    bottomTags: {
+                        type: string;
+                        items: {
+                            type: string;
+                            additionalProperties: boolean;
+                            required: string[];
+                            properties: {
+                                text: {
+                                    type: string;
+                                };
+                                url: {
+                                    type: string;
+                                };
+                                icon: {
+                                    type: string;
+                                    enum: string[];
+                                };
+                                target: {
+                                    type: string;
+                                };
+                            };
+                        };
+                    };
                     paddingTop: {
                         type: string;
                         enum: string[];
@@ -612,6 +668,9 @@ export declare const schemasForCustom: {
                                 enum: string[];
                             };
                         };
+                    };
+                    backgroundFull: {
+                        type: string;
                     };
                     type: {};
                     when: {
@@ -688,6 +747,9 @@ export declare const schemasForCustom: {
                             };
                         };
                     };
+                    backgroundFull: {
+                        type: string;
+                    };
                     type: {};
                     when: {
                         type: string;
@@ -743,6 +805,9 @@ export declare const schemasForCustom: {
                             contentType?: undefined;
                         })[];
                     };
+                    subtitle: {
+                        type: string;
+                    };
                     text: {
                         type: string;
                         contentType: string;
@@ -757,6 +822,17 @@ export declare const schemasForCustom: {
                         enum: string[];
                     };
                     links: {
+                        type: string;
+                        items: {
+                            type: string;
+                            properties: {
+                                when: {
+                                    type: string;
+                                };
+                            };
+                        };
+                    };
+                    subtitleLinks: {
                         type: string;
                         items: {
                             type: string;
@@ -853,6 +929,9 @@ export declare const schemasForCustom: {
                                 enum: string[];
                             };
                         };
+                    };
+                    backgroundFull: {
+                        type: string;
                     };
                     type: {};
                     when: {
@@ -939,6 +1018,9 @@ export declare const schemasForCustom: {
                             contentType?: undefined;
                         })[];
                     };
+                    subtitle: {
+                        type: string;
+                    };
                     text: {
                         type: string;
                         contentType: string;
@@ -953,6 +1035,17 @@ export declare const schemasForCustom: {
                         enum: string[];
                     };
                     links: {
+                        type: string;
+                        items: {
+                            type: string;
+                            properties: {
+                                when: {
+                                    type: string;
+                                };
+                            };
+                        };
+                    };
+                    subtitleLinks: {
                         type: string;
                         items: {
                             type: string;
@@ -1050,6 +1143,9 @@ export declare const schemasForCustom: {
                             };
                         };
                     };
+                    backgroundFull: {
+                        type: string;
+                    };
                     type: {};
                     when: {
                         type: string;
@@ -1102,6 +1198,9 @@ export declare const schemasForCustom: {
                                         contentType?: undefined;
                                     })[];
                                 };
+                                subtitle: {
+                                    type: string;
+                                };
                                 text: {
                                     type: string;
                                     contentType: string;
@@ -1116,6 +1215,17 @@ export declare const schemasForCustom: {
                                     enum: string[];
                                 };
                                 links: {
+                                    type: string;
+                                    items: {
+                                        type: string;
+                                        properties: {
+                                            when: {
+                                                type: string;
+                                            };
+                                        };
+                                    };
+                                };
+                                subtitleLinks: {
                                     type: string;
                                     items: {
                                         type: string;
@@ -1216,6 +1326,9 @@ export declare const schemasForCustom: {
                             };
                         };
                     };
+                    backgroundFull: {
+                        type: string;
+                    };
                     type: {};
                     when: {
                         type: string;
@@ -1302,6 +1415,9 @@ export declare const schemasForCustom: {
                             };
                         };
                     };
+                    backgroundFull: {
+                        type: string;
+                    };
                     type: {};
                     when: {
                         type: string;
@@ -1381,6 +1497,9 @@ export declare const schemasForCustom: {
                                 enum: string[];
                             };
                         };
+                    };
+                    backgroundFull: {
+                        type: string;
                     };
                     type: {};
                     when: {
@@ -1554,9 +1673,15 @@ export declare const schemasForCustom: {
                             ariaLabel: {
                                 type: string;
                             };
+                            contain: {
+                                type: string;
+                            };
                         };
                     };
                     youtube: {
+                        type: string;
+                    };
+                    videoIframe: {
                         type: string;
                     };
                     parallax: {
@@ -1670,7 +1795,8 @@ export declare const schemasForCustom: {
                         })[];
                     };
                     ratio: {
-                        type: string;
+                        type: string[];
+                        pattern: string;
                     };
                     iframe: {
                         type: string;
@@ -1754,6 +1880,9 @@ export declare const schemasForCustom: {
                             };
                         };
                     };
+                    backgroundFull: {
+                        type: string;
+                    };
                     type: {};
                     when: {
                         type: string;
@@ -1823,6 +1952,9 @@ export declare const schemasForCustom: {
                             };
                         };
                     };
+                    backgroundFull: {
+                        type: string;
+                    };
                     type: {};
                     when: {
                         type: string;
@@ -1891,6 +2023,9 @@ export declare const schemasForCustom: {
                                 enum: string[];
                             };
                         };
+                    };
+                    backgroundFull: {
+                        type: string;
                     };
                     type: {};
                     when: {
@@ -1965,6 +2100,9 @@ export declare const schemasForCustom: {
                                 enum: string[];
                             };
                         };
+                    };
+                    backgroundFull: {
+                        type: string;
                     };
                     type: {};
                     when: {

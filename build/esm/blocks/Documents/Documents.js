@@ -10,7 +10,7 @@ export const Documents = (props) => {
     return (React.createElement(Wrapper, { paddings: {
             [PaddingsDirections.top]: paddingTop,
             [PaddingsDirections.bottom]: paddingBottom,
-        }, className: b('content', { withSticky }), qa: qa },
+        }, className: b('content', { withSticky }), qa: qa, "data-testid": qa },
         React.createElement("ul", { className: b('list') }, items.map((item, index) => (React.createElement("li", { key: String(index) },
             React.createElement("a", { className: b('item'), href: item.link, target: "_blank", rel: "noreferrer" },
                 React.createElement(Document, null),

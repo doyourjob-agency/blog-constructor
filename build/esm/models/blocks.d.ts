@@ -46,7 +46,7 @@ export type FeedProps = {
     image: string;
 };
 export type FormProps = {
-    formData: FormBlockData;
+    formData?: FormBlockData;
     border?: 'shadow' | 'line' | 'none';
 } & PaddingsYFMProps & QAProps;
 export type DocumentsProps = ClassNameProps & {

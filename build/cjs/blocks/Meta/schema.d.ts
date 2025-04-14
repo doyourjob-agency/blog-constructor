@@ -60,6 +60,9 @@ export declare const Meta: {
                     };
                 };
             };
+            backgroundFull: {
+                type: string;
+            };
             type: {};
             when: {
                 type: string;

@@ -64,6 +64,9 @@ export declare const Author: {
                     };
                 };
             };
+            backgroundFull: {
+                type: string;
+            };
             type: {};
             when: {
                 type: string;

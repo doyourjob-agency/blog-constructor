@@ -14,12 +14,12 @@ unpredictable css rules order in build */
 }
 .bc-posts-empty__title {
   margin-top: 24px;
-  font-size: var(--g-text-display-2-font-size);
-  line-height: var(--g-text-display-2-line-height);
+  font-size: var(--g-text-display-2-font-size, var(--pc-text-display-2-font-size));
+  line-height: var(--g-text-display-2-line-height, var(--pc-text-display-2-line-height));
   font-weight: var(--g-text-accent-font-weight);
 }
 .bc-posts-empty__subtitle {
   margin-top: 16px;
-  font-size: var(--g-text-body-3-font-size);
-  line-height: var(--g-text-body-3-line-height);
+  font-size: var(--g-text-body-3-font-size, var(--pc-text-body-3-font-size));
+  line-height: var(--g-text-body-3-line-height, var(--pc-text-body-3-line-height));
 }

@@ -24,11 +24,13 @@ export declare const updateContentSizes: ({ size, colSizes, theme, ...contentDat
     } | Partial<Record<import("@gravity-ui/page-constructor").GridColumnSize, number>>;
     theme: import("@gravity-ui/page-constructor").ContentTheme;
     title?: string | import("@gravity-ui/page-constructor").TitleItemBaseProps | undefined;
+    subtitle?: string | undefined;
     titleId?: string | undefined;
     text?: string | undefined;
     textId?: string | undefined;
     additionalInfo?: string | undefined;
     links?: import("@gravity-ui/page-constructor").LinkProps[] | undefined;
+    subtitleLinks?: import("@gravity-ui/page-constructor").LinkProps[] | undefined;
     buttons?: import("@gravity-ui/page-constructor").ButtonProps[] | undefined;
     centered?: boolean | undefined;
     list?: import("@gravity-ui/page-constructor").ContentItemProps[] | undefined;
@@ -36,10 +38,11 @@ export declare const updateContentSizes: ({ size, colSizes, theme, ...contentDat
 };
 type GetBreadcrumbsProps = {
     tags?: Tag[];
+    blogTitle?: string;
     blogPath: string;
 };
 export declare const getBlogPath: (pathPrefix: string) => string;
-export declare const getBreadcrumbs: ({ tags, blogPath }: GetBreadcrumbsProps) => HeaderBreadCrumbsProps;
+export declare const getBreadcrumbs: ({ tags, blogTitle, blogPath }: GetBreadcrumbsProps) => HeaderBreadCrumbsProps;
 export declare const getMergedAnalyticsEvents: (analyticEvents: AnalyticsEventsProp, existringEvents?: AnalyticsEventsProp) => {
     name: string;
     type?: string | undefined;

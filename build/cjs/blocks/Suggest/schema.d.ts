@@ -60,6 +60,9 @@ export declare const Suggest: {
                     };
                 };
             };
+            backgroundFull: {
+                type: string;
+            };
             type: {};
             when: {
                 type: string;

@@ -49,6 +49,6 @@ unpredictable css rules order in build */
   }
 }
 .mobile .bc-feed-header_has-background .bc-feed-header__title {
-  font-size: var(--g-text-display-2-font-size);
-  line-height: var(--g-text-display-2-line-height);
+  font-size: var(--g-text-display-2-font-size, var(--pc-text-display-2-font-size));
+  line-height: var(--g-text-display-2-line-height, var(--pc-text-display-2-line-height));
 }

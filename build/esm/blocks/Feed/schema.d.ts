@@ -77,6 +77,9 @@ export declare const Feed: {
                     };
                 };
             };
+            backgroundFull: {
+                type: string;
+            };
             type: {};
             when: {
                 type: string;

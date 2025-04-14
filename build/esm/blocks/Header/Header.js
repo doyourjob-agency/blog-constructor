@@ -21,10 +21,10 @@ export const Header = (props) => {
     const { theme, paddingTop, paddingBottom } = props;
     const { post } = useContext(PostPageContext);
     const { locale } = useContext(LocaleContext);
-    const { getBlogPath = getDefaultBlogPath } = useContext(SettingsContext);
+    const { getBlogPath = getDefaultBlogPath, blogTitle } = useContext(SettingsContext);
     const blogPath = getBlogPath(locale.pathPrefix || '');
     const { description, title, id, date, readingTime, tags } = post;
-    const breadcrumbs = getBreadcrumbs({ tags, blogPath });
+    const breadcrumbs = getBreadcrumbs({ tags, blogTitle, blogPath });
     if (theme === 'dark' && breadcrumbs) {
         breadcrumbs.theme = 'dark';
     }

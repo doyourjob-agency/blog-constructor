@@ -25,10 +25,10 @@ const Header = (props) => {
     const { theme, paddingTop, paddingBottom } = props;
     const { post } = (0, react_1.useContext)(PostPageContext_1.PostPageContext);
     const { locale } = (0, react_1.useContext)(LocaleContext_1.LocaleContext);
-    const { getBlogPath = common_1.getBlogPath } = (0, react_1.useContext)(SettingsContext_1.SettingsContext);
+    const { getBlogPath = common_1.getBlogPath, blogTitle } = (0, react_1.useContext)(SettingsContext_1.SettingsContext);
     const blogPath = getBlogPath(locale.pathPrefix || '');
     const { description, title, id, date, readingTime, tags } = post;
-    const breadcrumbs = (0, common_1.getBreadcrumbs)({ tags, blogPath });
+    const breadcrumbs = (0, common_1.getBreadcrumbs)({ tags, blogTitle, blogPath });
     if (theme === 'dark' && breadcrumbs) {
         breadcrumbs.theme = 'dark';
     }

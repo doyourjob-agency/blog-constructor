@@ -14,8 +14,8 @@ unpredictable css rules order in build */
   flex-wrap: wrap;
 }
 .bc-feed-controls__header-item_title {
-  font-size: var(--g-text-display-4-font-size);
-  line-height: var(--g-text-display-4-line-height);
+  font-size: var(--g-text-display-4-font-size, var(--pc-text-display-4-font-size));
+  line-height: var(--g-text-display-4-line-height, var(--pc-text-display-4-line-height));
   padding-top: 112px;
   padding-bottom: 96px;
 }
@@ -62,8 +62,8 @@ unpredictable css rules order in build */
   transform: translateX(-50%);
 }
 .bc-feed-controls__popup-filter {
-  font-size: var(--g-text-body-2-font-size);
-  line-height: var(--g-text-body-2-line-height);
+  font-size: var(--g-text-body-2-font-size, var(--pc-text-body-2-font-size));
+  line-height: var(--g-text-body-2-line-height, var(--pc-text-body-2-line-height));
   padding: 4px 12px;
   border: none;
   border-bottom: 1px solid var(--g-color-line-generic);

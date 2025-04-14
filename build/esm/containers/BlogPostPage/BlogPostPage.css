@@ -25,8 +25,8 @@
 /* use this for style redefinitions to awoid problems with
 unpredictable css rules order in build */
 .yfm_blog {
-  font-size: var(--g-text-body-3-font-size);
-  line-height: var(--g-text-body-3-line-height);
+  font-size: var(--g-text-body-3-font-size, var(--pc-text-body-3-font-size));
+  line-height: var(--g-text-body-3-line-height, var(--pc-text-body-3-line-height));
   color: var(--g-color-text-primary);
 }
 .yfm_blog h1:first-child,
@@ -38,16 +38,16 @@ unpredictable css rules order in build */
   padding-top: 0;
 }
 .yfm_blog h2 {
-  font-size: var(--g-text-display-2-font-size);
-  line-height: var(--g-text-display-2-line-height);
+  font-size: var(--g-text-display-2-font-size, var(--pc-text-display-2-font-size));
+  line-height: var(--g-text-display-2-line-height, var(--pc-text-display-2-line-height));
 }
 .yfm_blog h3 {
-  font-size: var(--g-text-header-2-font-size);
-  line-height: var(--g-text-header-2-line-height);
+  font-size: var(--g-text-header-2-font-size, var(--pc-text-header-2-font-size));
+  line-height: var(--g-text-header-2-line-height, var(--pc-text-header-2-line-height));
 }
 .yfm_blog h4 {
-  font-size: var(--g-text-header-1-font-size);
-  line-height: var(--g-text-header-1-line-height);
+  font-size: var(--g-text-header-1-font-size, var(--pc-text-header-1-font-size));
+  line-height: var(--g-text-header-1-line-height, var(--pc-text-header-1-line-height));
 }
 .yfm_blog.yfm_blog h1,
 .yfm_blog.yfm_blog h2,
@@ -101,13 +101,13 @@ unpredictable css rules order in build */
   background-color: var(--g-color-base-generic);
 }
 .yfm_blog_media {
-  font-size: var(--g-text-body-3-font-size);
-  line-height: var(--g-text-body-3-line-height);
+  font-size: var(--g-text-body-3-font-size, var(--pc-text-body-3-font-size));
+  line-height: var(--g-text-body-3-line-height, var(--pc-text-body-3-line-height));
   color: var(--g-color-text-secondary);
 }
 .yfm_blog_breadcrumbs {
-  font-size: var(--g-text-body-2-font-size);
-  line-height: var(--g-text-body-2-line-height);
+  font-size: var(--g-text-body-2-font-size, var(--pc-text-body-2-font-size));
+  line-height: var(--g-text-body-2-line-height, var(--pc-text-body-2-line-height));
   color: var(--g-text-color-base);
 }
 .yfm_blog a {
@@ -143,7 +143,7 @@ unpredictable css rules order in build */
 /* use this for style redefinitions to awoid problems with
 unpredictable css rules order in build */
 .yfm_constructor {
-  font-family: var(--g-font-family-sans);
+  font-family: var(--g-font-family-sans, var(--yfm-font-family-sans));
   color: var(--g-color-text-primary);
 }
 .yfm_constructor code,

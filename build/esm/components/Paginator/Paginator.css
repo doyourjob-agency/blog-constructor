@@ -16,8 +16,8 @@ unpredictable css rules order in build */
   margin-left: 4px;
   padding: 12px 0px;
   color: var(--g-color-text-primary);
-  font-size: var(--g-text-body-2-font-size);
-  line-height: var(--g-text-body-2-line-height);
+  font-size: var(--g-text-body-2-font-size, var(--pc-text-body-2-font-size));
+  line-height: var(--g-text-body-2-line-height, var(--pc-text-body-2-line-height));
 }
 .bc-paginator__item_type_page {
   --bc-border-radius: 10px;

@@ -46,6 +46,9 @@ export declare const Banner: {
                     contentType?: undefined;
                 })[];
             };
+            subtitle: {
+                type: string;
+            };
             text: {
                 type: string;
                 contentType: string;
@@ -60,6 +63,17 @@ export declare const Banner: {
                 enum: string[];
             };
             links: {
+                type: string;
+                items: {
+                    type: string;
+                    properties: {
+                        when: {
+                            type: string;
+                        };
+                    };
+                };
+            };
+            subtitleLinks: {
                 type: string;
                 items: {
                     type: string;
@@ -156,6 +170,9 @@ export declare const Banner: {
                         enum: string[];
                     };
                 };
+            };
+            backgroundFull: {
+                type: string;
             };
             type: {};
             when: {

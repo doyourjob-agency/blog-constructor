@@ -71,6 +71,9 @@ export declare const Layout: {
                     };
                 };
             };
+            backgroundFull: {
+                type: string;
+            };
             type: {};
             when: {
                 type: string;
