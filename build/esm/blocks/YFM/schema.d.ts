@@ -43,6 +43,38 @@ export declare const YFM: {
                     };
                 };
             };
+            visibility: {
+                oneOf: ({
+                    type: string;
+                    enum: string[];
+                    additionalProperties?: undefined;
+                    properties?: undefined;
+                } | {
+                    type: string;
+                    additionalProperties: boolean;
+                    properties: {
+                        xs: {
+                            type: string;
+                        };
+                        sm: {
+                            type: string;
+                        };
+                        md: {
+                            type: string;
+                        };
+                        lg: {
+                            type: string;
+                        };
+                        xl: {
+                            type: string;
+                        };
+                        xxl: {
+                            type: string;
+                        };
+                    };
+                    enum?: undefined;
+                })[];
+            };
             visible: {
                 type: string;
                 enum: string[];
