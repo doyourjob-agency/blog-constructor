@@ -38,7 +38,7 @@ const preview: Preview = {
         },
         options: {
             storySort: {
-                order: ['Components', 'Blocks', 'Containers'],
+                order: ['Changelog', 'Components', 'Blocks', 'Containers'],
                 method: 'alphabetical',
             },
         },
