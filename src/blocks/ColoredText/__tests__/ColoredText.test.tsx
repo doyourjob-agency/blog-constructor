@@ -48,14 +48,14 @@ const qaAttributes = getQaAttributes(coloredTextData.qa);
 const contentQaAttributes = getQaAttributes(qaAttributes.content, 'list');
 
 describe('ColoredText', () => {
-    test('Render by default', async () => {
+    test('Render by default', () => {
         render(<ColoredText {...pick(coloredTextData, 'title')} />);
         const coloredText = screen.getByText(coloredTextData.title);
         expect(coloredText).toBeInTheDocument();
         expect(coloredText).toBeVisible();
     });
 
-    test('Render image', async () => {
+    test('Render image', () => {
         render(
             <ColoredText
                 {...pick(coloredTextData, 'title')}
@@ -66,7 +66,7 @@ describe('ColoredText', () => {
         expect(image).toHaveAttribute('src', coloredTextData.background.image);
     });
 
-    test('Render background color', async () => {
+    test('Render background color', () => {
         render(
             <ColoredText
                 {...pick(coloredTextData, 'title', 'qa')}
@@ -99,21 +99,21 @@ describe('ColoredText', () => {
         },
     );
 
-    test('Render with title', async () => {
+    test('Render with title', () => {
         testContentWithTitle<ColoredTextProps>({
             component: ColoredText,
             props: pick(coloredTextData, 'title'),
         });
     });
 
-    test('Render with text', async () => {
+    test('Render with text', () => {
         testContentWithText<ColoredTextProps>({
             component: ColoredText,
             props: pick(coloredTextData, 'text'),
         });
     });
 
-    test('Render with additionalInfo', async () => {
+    test('Render with additionalInfo', () => {
         testContentWithAdditionalInfo<ColoredTextProps>({
             component: ColoredText,
             props: pick(coloredTextData, 'additionalInfo'),
@@ -128,7 +128,7 @@ describe('ColoredText', () => {
         });
     });
 
-    test('Render with centered', async () => {
+    test('Render with centered', () => {
         testContentWithCentered<ColoredTextProps>({
             component: ColoredText,
             props: {...pick(coloredTextData, 'centered', 'qa')},
@@ -147,7 +147,7 @@ describe('ColoredText', () => {
         },
     );
 
-    test('Render with list', async () => {
+    test('Render with list', () => {
         testContentWithList<ColoredTextProps>({
             component: ColoredText,
             props: pick(coloredTextData, 'list', 'qa'),

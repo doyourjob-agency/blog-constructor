@@ -17,7 +17,7 @@ const yfmProps = {
 const qaAttributes = getQaAttributes(yfmProps.qa);
 
 describe('YFM', () => {
-    test('render yfm by default', async () => {
+    test('render yfm by default', () => {
         render(<YFM {...yfmProps} />);
         const yfm = screen.getByText(yfmProps.text);
         expect(yfm).toHaveClass('yfm');

@@ -54,13 +54,13 @@ const RenderComponent = (props: MetaProps) => {
 };
 
 describe('Meta', () => {
-    test('render meta by default', async () => {
+    test('render meta by default', () => {
         render(<RenderComponent {...metaProps} />);
         const meta = screen.getByText(post.title);
         expect(meta).toHaveClass('yfm_blog_breadcrumbs');
     });
 
-    test('render with breadcrumbs', async () => {
+    test('render with breadcrumbs', () => {
         render(<RenderComponent {...metaProps} />);
         const blogBreadcrumb = screen.getByText('Blog');
         const tagBreadcrumb = screen.getByText('Slug');
@@ -71,7 +71,7 @@ describe('Meta', () => {
         expect(titleBreadcrumb).toHaveClass('yfm_blog_breadcrumbs');
     });
 
-    test('render with date', async () => {
+    test('render with date', () => {
         const qaAttr = getQaAttributes(qaAttributes.postInfo, 'date');
 
         render(<RenderComponent {...metaProps} />);
@@ -80,7 +80,7 @@ describe('Meta', () => {
         expect(blogBreadcrumb).toHaveTextContent(format(post.date, 'longDate', metaProps.locale));
     });
 
-    test('render with reading time', async () => {
+    test('render with reading time', () => {
         const qaAttr = getQaAttributes(qaAttributes.postInfo, 'reading-time');
 
         render(<RenderComponent {...metaProps} />);
@@ -102,7 +102,7 @@ describe('Meta', () => {
         expect(shareOption).toBeVisible();
     });
 
-    test('render with likes', async () => {
+    test('render with likes', () => {
         const qaAttr = getQaAttributes(qaAttributes.postInfo, 'save');
 
         render(<RenderComponent {...metaProps} />);

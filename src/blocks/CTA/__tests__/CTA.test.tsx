@@ -36,7 +36,7 @@ const qaAttributes = getQaAttributes(ctaData.qa);
 const contentQaAttributes = getQaAttributes(qaAttributes.content, 'link');
 
 describe('CTA', () => {
-    test('Render by default', async () => {
+    test('Render by default', () => {
         render(<CTA {...ctaData} />);
         const coloredText = screen.getByText(ctaData.items[0].title);
         expect(coloredText).toBeInTheDocument();
@@ -65,7 +65,7 @@ describe('CTA', () => {
         },
     );
 
-    test('Render with title', async () => {
+    test('Render with title', () => {
         testContentWithTitle<CTAProps>({
             component: CTA,
             props: ctaData,
@@ -75,7 +75,7 @@ describe('CTA', () => {
         });
     });
 
-    test('Render with links', async () => {
+    test('Render with links', () => {
         const linkQa = getQaAttributes(contentQaAttributes.link, ['normal']);
         testContentWithLinks<CTAProps>({
             component: CTA,

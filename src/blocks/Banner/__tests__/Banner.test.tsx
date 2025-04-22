@@ -54,14 +54,14 @@ const qaAttributes = getQaAttributes(bannerData.qa, ['image-container']);
 const contentQaAttributes = getQaAttributes(qaAttributes.content, ['link', 'list']);
 
 describe('Banner', () => {
-    test('Render by default', async () => {
+    test('Render by default', () => {
         render(<Banner {...pick(bannerData, 'title')} />);
         const banner = screen.getByText(bannerData.title);
         expect(banner).toBeInTheDocument();
         expect(banner).toBeVisible();
     });
 
-    test('Render image', async () => {
+    test('Render image', () => {
         render(<Banner {...pick(bannerData, 'title', 'image')} />);
         const image = screen.getByRole('img');
         expect(image).toHaveAttribute('src', bannerData.image);
@@ -78,7 +78,7 @@ describe('Banner', () => {
         },
     );
 
-    test('Render background color', async () => {
+    test('Render background color', () => {
         render(<Banner {...pick(bannerData, 'title', 'color', 'qa')} />);
         const bannerContent = screen.getByTestId(qaAttributes.content);
         expect(bannerContent).toHaveStyle({backgroundColor: bannerData.color});
@@ -106,21 +106,21 @@ describe('Banner', () => {
         },
     );
 
-    test('Render with title', async () => {
+    test('Render with title', () => {
         testContentWithTitle<BannerProps>({
             component: Banner,
             props: pick(bannerData, 'title'),
         });
     });
 
-    test('Render with text', async () => {
+    test('Render with text', () => {
         testContentWithText<BannerProps>({
             component: Banner,
             props: pick(bannerData, 'text'),
         });
     });
 
-    test('Render with additionalInfo', async () => {
+    test('Render with additionalInfo', () => {
         testContentWithAdditionalInfo<BannerProps>({
             component: Banner,
             props: pick(bannerData, 'additionalInfo'),
@@ -135,7 +135,7 @@ describe('Banner', () => {
         });
     });
 
-    test('Render with links', async () => {
+    test('Render with links', () => {
         const linkQa = getQaAttributes(contentQaAttributes.link, ['normal']);
         testContentWithLinks<BannerProps>({
             component: Banner,
@@ -144,7 +144,7 @@ describe('Banner', () => {
         });
     });
 
-    test('Render with buttons', async () => {
+    test('Render with buttons', () => {
         testContentWithButtons<BannerProps>({
             component: Banner,
             props: bannerData,
@@ -152,7 +152,7 @@ describe('Banner', () => {
         });
     });
 
-    test('Render with centered', async () => {
+    test('Render with centered', () => {
         testContentWithCentered<BannerProps>({
             component: Banner,
             props: bannerData,
@@ -171,7 +171,7 @@ describe('Banner', () => {
         },
     );
 
-    test('Render with list', async () => {
+    test('Render with list', () => {
         testContentWithList<BannerProps>({
             component: Banner,
             props: pick(bannerData, 'list', 'qa'),

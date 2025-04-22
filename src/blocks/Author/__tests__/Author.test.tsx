@@ -29,7 +29,7 @@ const RenderComponent = (props: AuthorProps) => {
 };
 
 describe('Author', () => {
-    test('render author by default', async () => {
+    test('render author by default', () => {
         render(<RenderComponent {...authorProps} />);
 
         const author = screen.getByTestId(authorProps.qa);
@@ -38,7 +38,7 @@ describe('Author', () => {
         expect(author).toBeVisible();
     });
 
-    test('add image', async () => {
+    test('add image', () => {
         render(<RenderComponent {...authorProps} />);
 
         const avatar = screen.getByRole('img');
@@ -46,7 +46,7 @@ describe('Author', () => {
         expect(avatar).toHaveAttribute('src', authorProps.image);
     });
 
-    test('name rendered', async () => {
+    test('name rendered', () => {
         const authorData = post.authors.find(({id}) => id === authorProps.authorId);
         const authorName = `${authorData?.firstName} ${authorData?.secondName}`;
 
@@ -58,7 +58,7 @@ describe('Author', () => {
         expect(name).toBeVisible();
     });
 
-    test('description rendered', async () => {
+    test('description rendered', () => {
         const authorData = post.authors.find(({id}) => id === authorProps.authorId) as AuthorType;
         const authorDescription = authorData?.shortDescription || '';
 
