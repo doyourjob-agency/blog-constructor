@@ -31,6 +31,8 @@ export const Sharing = ({theme, analyticsEvents}: SharingProps) => {
         handleAnalyticsGlobal(analyticsEvents);
     }, [analyticsEvents, handleAnalyticsGlobal]);
 
+    if (shareOptions && shareOptions.length === 0) return null;
+
     return (
         <div className={b('item')}>
             <div className={b('icon')}>
