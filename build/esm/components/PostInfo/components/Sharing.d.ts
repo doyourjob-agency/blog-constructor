@@ -5,5 +5,5 @@ type SharingProps = {
     theme?: 'light' | 'dark';
     analyticsEvents?: AnalyticsEventsProp;
 };
-export declare const Sharing: ({ theme, analyticsEvents }: SharingProps) => React.JSX.Element;
+export declare const Sharing: ({ theme, analyticsEvents }: SharingProps) => React.JSX.Element | null;
 export {};

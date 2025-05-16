@@ -19,6 +19,8 @@ export const Sharing = ({ theme, analyticsEvents }) => {
     const handleAnalytics = useCallback(() => {
         handleAnalyticsGlobal(analyticsEvents);
     }, [analyticsEvents, handleAnalyticsGlobal]);
+    if (shareOptions && shareOptions.length === 0)
+        return null;
     return (React.createElement("div", { className: b('item') },
         React.createElement("div", { className: b('icon') },
             React.createElement(SharePopover, { url: getAbsolutePath(router), className: b('share'), iconClass: b('share-icon'), switcherClassName: b('switcher', { theme }), tooltipClassName: b('popup'), useWebShareApi: isMobile, direction: ShareLayoutDirection.Column, buttonTitle: i18n(Keyset.ActionShare), customIcon: ShareArrowUp, placement: "bottom", openByHover: false, shareOptions: shareOptions, onClick: handleAnalytics }))));
