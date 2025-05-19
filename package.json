@@ -1,11 +1,11 @@
 {
-  "name": "@gravity-ui/blog-constructor",
+  "name": "@doyourjob/gravity-ui-blog-constructor",
   "version": "6.4.6",
   "description": "Gravity UI Blog Constructor",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/doyourjob-agency/blog-constructor"
+    "url": "git+https://github.com/doyourjob-agency/blog-constructor.git"
   },
   "exports": {
     ".": {
