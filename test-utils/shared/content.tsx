@@ -1,6 +1,6 @@
 import React, {ElementType} from 'react';
 
-import type {ContentProps} from '@gravity-ui/page-constructor/build/esm/sub-blocks/Content/Content';
+import type {ContentProps} from '@doyourjob/gravity-ui-page-constructor/build/esm/sub-blocks/Content/Content';
 import {render, screen} from '@testing-library/react';
 import pick from 'lodash/pick';
 

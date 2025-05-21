@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Media as PCMedia, YFMWrapper} from '@gravity-ui/page-constructor';
+import {Media as PCMedia, YFMWrapper} from '@doyourjob/gravity-ui-page-constructor';
 
 import {Wrapper} from '../../components/Wrapper/Wrapper';
 import {MediaProps} from '../../models/blocks';

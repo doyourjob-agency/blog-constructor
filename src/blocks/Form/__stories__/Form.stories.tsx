@@ -7,7 +7,11 @@ import {Meta, StoryFn} from '@storybook/react';
 import formsData from '../../../../.mocks/forms.json';
 import {FormBlockModel} from '../../../models/blocks';
 import {Form} from '../Form';
-import {FormBlockProps, isHubspotDataForm, isYandexDataForm} from '@gravity-ui/page-constructor';
+import {
+    FormBlockProps,
+    isHubspotDataForm,
+    isYandexDataForm,
+} from '@doyourjob/gravity-ui-page-constructor';
 
 export default {
     title: 'Blocks/Form',

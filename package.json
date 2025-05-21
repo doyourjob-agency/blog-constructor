@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "@bem-react/classname": "^1.6.0",
+    "@doyourjob/gravity-ui-page-constructor": "^5.31.18",
     "@gravity-ui/components": "^3.4.2",
     "@gravity-ui/i18n": "^1.4.0",
     "lodash": "^4.17.21",
@@ -71,7 +72,6 @@
   },
   "peerDependencies": {
     "@diplodoc/transform": "^4.10.7",
-    "@gravity-ui/page-constructor": "^5.0.0",
     "@gravity-ui/uikit": "^6.1.1",
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
@@ -82,7 +82,6 @@
     "@commitlint/config-conventional": "^17.4.3",
     "@diplodoc/transform": "^4.10.8",
     "@gravity-ui/eslint-config": "^3.1.1",
-    "@gravity-ui/page-constructor": "github:doyourjob-agency/page-constructor#v5.31.10",
     "@gravity-ui/prettier-config": "^1.1.0",
     "@gravity-ui/stylelint-config": "^4.0.1",
     "@gravity-ui/tsconfig": "^1.0.0",

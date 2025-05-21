@@ -1,5 +1,10 @@
 import React, {useContext, useMemo} from 'react';
-import {AnalyticsEventsProp, CardBase, HTML, YFMWrapper} from '@gravity-ui/page-constructor';
+import {
+    AnalyticsEventsProp,
+    CardBase,
+    HTML,
+    YFMWrapper,
+} from '@doyourjob/gravity-ui-page-constructor';
 import {useUniqId} from '@gravity-ui/uikit';
 
 import {LikesContext} from '../../contexts/LikesContext';

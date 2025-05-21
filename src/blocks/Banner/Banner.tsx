@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Content, Image} from '@gravity-ui/page-constructor';
+import {Content, Image} from '@doyourjob/gravity-ui-page-constructor';
 
 import {Wrapper} from '../../components/Wrapper/Wrapper';
 import {BannerProps} from '../../models/blocks';

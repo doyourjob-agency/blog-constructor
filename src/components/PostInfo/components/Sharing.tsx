@@ -1,7 +1,7 @@
 import React, {useCallback, useContext} from 'react';
 
 import {ShareLayoutDirection, SharePopover} from '@gravity-ui/components';
-import {AnalyticsEventsProp, useAnalytics} from '@gravity-ui/page-constructor';
+import {AnalyticsEventsProp, useAnalytics} from '@doyourjob/gravity-ui-page-constructor';
 
 import {MobileContext} from '../../../contexts/MobileContext';
 import {PostPageContext} from '../../../contexts/PostPageContext';

@@ -1,6 +1,6 @@
 import React, {MouseEvent} from 'react';
 
-import {CardLayoutBlock} from '@gravity-ui/page-constructor';
+import {CardLayoutBlock} from '@doyourjob/gravity-ui-page-constructor';
 import {Button} from '@gravity-ui/uikit';
 
 import {Keyset, i18n} from '../../i18n';

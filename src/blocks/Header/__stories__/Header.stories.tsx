@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Block, PageConstructor} from '@gravity-ui/page-constructor';
+import {Block, PageConstructor} from '@doyourjob/gravity-ui-page-constructor';
 import {Meta, StoryFn} from '@storybook/react';
 
 import {blockMockData, getDefaultStoryArgs} from '../../../../.mocks/utils';

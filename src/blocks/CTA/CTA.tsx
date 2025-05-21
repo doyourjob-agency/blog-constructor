@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Content, ContentBlockProps} from '@gravity-ui/page-constructor';
+import {Content, ContentBlockProps} from '@doyourjob/gravity-ui-page-constructor';
 
 import {Wrapper} from '../../components/Wrapper/Wrapper';
 import {CTAProps} from '../../models/blocks';

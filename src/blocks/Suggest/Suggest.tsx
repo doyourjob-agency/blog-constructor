@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 
-import {SliderBlock} from '@gravity-ui/page-constructor';
+import {SliderBlock} from '@doyourjob/gravity-ui-page-constructor';
 
 import {PostCard} from '../../components/PostCard/PostCard';
 import {Wrapper} from '../../components/Wrapper/Wrapper';

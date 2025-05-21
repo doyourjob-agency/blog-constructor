@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 
-import {AnalyticsEventsProp, HeaderBlock} from '@gravity-ui/page-constructor';
+import {AnalyticsEventsProp, HeaderBlock} from '@doyourjob/gravity-ui-page-constructor';
 
 import {PostInfo} from '../../components/PostInfo/PostInfo';
 import {Wrapper} from '../../components/Wrapper/Wrapper';

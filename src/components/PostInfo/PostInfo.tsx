@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 
-import {AnalyticsEventsProp} from '@gravity-ui/page-constructor';
+import {AnalyticsEventsProp} from '@doyourjob/gravity-ui-page-constructor';
 import {PostPageContext} from '../../contexts/PostPageContext';
 import {PostData, QAProps} from '../../models/common';
 import {block} from '../../utils/cn';

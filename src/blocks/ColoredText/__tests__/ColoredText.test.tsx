@@ -3,7 +3,7 @@ import React from 'react';
 import {
     ContentSize,
     ContentTheme,
-} from '@gravity-ui/page-constructor/build/esm/models/constructor-items/common';
+} from '@doyourjob/gravity-ui-page-constructor/build/esm/models/constructor-items/common';
 import {render, screen} from '@testing-library/react';
 import omit from 'lodash/omit';
 import pick from 'lodash/pick';

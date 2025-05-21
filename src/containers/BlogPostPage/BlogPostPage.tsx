@@ -8,7 +8,7 @@ import {
     PageConstructorProvider,
     PageConstructorProviderProps,
     PageContent,
-} from '@gravity-ui/page-constructor';
+} from '@doyourjob/gravity-ui-page-constructor';
 
 import {MetaWrapper} from '../../components/MetaWrapper/MetaWrapper';
 import {PromptSignIn} from '../../components/PromptSignIn/PromptSignIn';

@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {MarkdownItPluginCb} from '@diplodoc/transform/lib/plugins/typings';
-import {ConstructorBlock, PageContent} from '@gravity-ui/page-constructor';
-import {contentTransformer} from '@gravity-ui/page-constructor/server';
+import {ConstructorBlock, PageContent} from '@doyourjob/gravity-ui-page-constructor';
+import {contentTransformer} from '@doyourjob/gravity-ui-page-constructor/server';
 import yaml from 'js-yaml';
 
 import {Lang} from '@gravity-ui/uikit';

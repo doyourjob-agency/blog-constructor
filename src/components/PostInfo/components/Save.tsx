@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 
-import {AnalyticsEventsProp, useAnalytics} from '@gravity-ui/page-constructor';
+import {AnalyticsEventsProp, useAnalytics} from '@doyourjob/gravity-ui-page-constructor';
 import {Icon, useUniqId} from '@gravity-ui/uikit';
 
 import {LikesContext} from '../../../contexts/LikesContext';

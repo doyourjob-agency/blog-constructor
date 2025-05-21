@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {YFMWrapper} from '@gravity-ui/page-constructor';
+import {YFMWrapper} from '@doyourjob/gravity-ui-page-constructor';
 
 import {Wrapper} from '../../components/Wrapper/Wrapper';
 import {YFMProps} from '../../models/blocks';

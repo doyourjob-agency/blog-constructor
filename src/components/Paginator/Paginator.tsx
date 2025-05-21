@@ -1,6 +1,6 @@
 import React, {useEffect, useMemo, useState} from 'react';
 
-import {useAnalytics} from '@gravity-ui/page-constructor';
+import {useAnalytics} from '@doyourjob/gravity-ui-page-constructor';
 
 import {DefaultGoalIds} from '../../constants';
 import {AnalyticsCounter} from '../../counters/utils';

@@ -6,7 +6,7 @@ import {
     HeaderBlockProps,
     MediaProps as PCMediaProps,
     TextTheme,
-} from '@gravity-ui/page-constructor';
+} from '@doyourjob/gravity-ui-page-constructor';
 
 import {BlockType, ClassNameProps, DocumentData, PostData, QAProps} from './common';
 import {PaddingsYFMProps} from './paddings';

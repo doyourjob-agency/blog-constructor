@@ -1,4 +1,8 @@
-import {typografToHTML, typografToText, yfmTransformer} from '@gravity-ui/page-constructor/server';
+import {
+    typografToHTML,
+    typografToText,
+    yfmTransformer,
+} from '@doyourjob/gravity-ui-page-constructor/server';
 
 import {PostData, TransformPostOptions} from '../models/common';
 import {Lang} from '@gravity-ui/uikit';

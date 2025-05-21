@@ -1,4 +1,4 @@
-import {sanitizeHtml} from '@gravity-ui/page-constructor/server';
+import {sanitizeHtml} from '@doyourjob/gravity-ui-page-constructor/server';
 
 import {PostMetaProps} from '../models/common';
 

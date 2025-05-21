@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 
-import {CustomConfig, getCustomItems} from '@gravity-ui/page-constructor';
+import {CustomConfig, getCustomItems} from '@doyourjob/gravity-ui-page-constructor';
 
 import componentMap from '../constructor/blocksMap';
 

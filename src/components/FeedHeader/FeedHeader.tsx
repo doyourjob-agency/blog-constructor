@@ -6,7 +6,7 @@ import {
     Grid,
     Theme,
     getThemedValue,
-} from '@gravity-ui/page-constructor';
+} from '@doyourjob/gravity-ui-page-constructor';
 
 import {ClassNameProps, HeaderBlockProps} from '../../models/common';
 import {block} from '../../utils/cn';

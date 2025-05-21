@@ -1,6 +1,10 @@
 import React, {useContext} from 'react';
 
-import {AnalyticsEventsProp, HeaderBreadcrumbs, YFMWrapper} from '@gravity-ui/page-constructor';
+import {
+    AnalyticsEventsProp,
+    HeaderBreadcrumbs,
+    YFMWrapper,
+} from '@doyourjob/gravity-ui-page-constructor';
 
 import {PostInfo} from '../../components/PostInfo/PostInfo';
 import {Wrapper} from '../../components/Wrapper/Wrapper';

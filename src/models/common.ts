@@ -2,7 +2,7 @@ import {ReactNode} from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {MarkdownItPluginCb} from '@diplodoc/transform/lib/plugins/typings';
-import {HeaderBlockProps as PageConstructorHeaderBlockProps} from '@gravity-ui/page-constructor';
+import {HeaderBlockProps as PageConstructorHeaderBlockProps} from '@doyourjob/gravity-ui-page-constructor';
 import {IBrowser, IDevice} from 'ua-parser-js';
 
 import {Locale} from '../models/locale';

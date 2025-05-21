@@ -5,7 +5,7 @@ module.exports = {
     transform: {
         '^.+\\.[jt]sx?$': ['ts-jest', {tsconfig: './tsconfig.test.json'}],
     },
-    transformIgnorePatterns: ['node_modules/(?!(@gravity-ui|tinygesture)/)'],
+    transformIgnorePatterns: ['node_modules/(?!(@gravity-ui|@doyourjob|tinygesture)/)'],
     coverageDirectory: './coverage',
     collectCoverageFrom: [
         'src/blocks/**/*.{ts,tsx,js,jsx}',

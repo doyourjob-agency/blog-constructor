@@ -5,7 +5,7 @@ import {
     AnalyticsContextProps,
     Theme,
     ThemeContext,
-} from '@gravity-ui/page-constructor';
+} from '@doyourjob/gravity-ui-page-constructor';
 
 import {DEFAULT_THEME} from '../constants';
 import {DeviceContext, DeviceContextProps} from '../contexts/DeviceContext';

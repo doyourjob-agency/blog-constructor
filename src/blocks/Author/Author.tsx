@@ -1,6 +1,6 @@
 import React, {useContext, useMemo} from 'react';
 
-import {AuthorType, Author as PCAuthor} from '@gravity-ui/page-constructor';
+import {AuthorType, Author as PCAuthor} from '@doyourjob/gravity-ui-page-constructor';
 
 import {Wrapper} from '../../components/Wrapper/Wrapper';
 import {PostPageContext} from '../../contexts/PostPageContext';

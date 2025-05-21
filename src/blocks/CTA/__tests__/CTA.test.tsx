@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {LinkTheme} from '@gravity-ui/page-constructor';
+import {LinkTheme} from '@doyourjob/gravity-ui-page-constructor';
 import {render, screen} from '@testing-library/react';
 
 import {PADDING_SIZES} from '../../../../test-utils/constants';

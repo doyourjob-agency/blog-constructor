@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useEffect, useMemo, useReducer, useState} from 'react';
 
-import {useAnalytics} from '@gravity-ui/page-constructor';
+import {useAnalytics} from '@doyourjob/gravity-ui-page-constructor';
 import {Icon} from '@gravity-ui/uikit';
 
 import {FeedHeader} from '../../components/FeedHeader/FeedHeader';

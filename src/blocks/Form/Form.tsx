@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {InnerForm} from '@gravity-ui/page-constructor';
+import {InnerForm} from '@doyourjob/gravity-ui-page-constructor';
 
 import {Wrapper} from '../../components/Wrapper/Wrapper';
 import {FormProps} from '../../models/blocks';

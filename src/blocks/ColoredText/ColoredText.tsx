@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {BackgroundImage, Content} from '@gravity-ui/page-constructor';
+import {BackgroundImage, Content} from '@doyourjob/gravity-ui-page-constructor';
 
 import {Wrapper} from '../../components/Wrapper/Wrapper';
 import {ColoredTextProps} from '../../models/blocks';

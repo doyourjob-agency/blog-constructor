@@ -3,7 +3,7 @@ import {
     AnalyticsEventsProp,
     ContentBlockProps,
     HeaderBreadCrumbsProps,
-} from '@gravity-ui/page-constructor';
+} from '@doyourjob/gravity-ui-page-constructor';
 import camelCase from 'lodash/camelCase';
 import debounce from 'lodash/debounce';
 import flatten from 'lodash/flatten';
