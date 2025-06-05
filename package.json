@@ -1,6 +1,6 @@
 {
   "name": "@doyourjob/gravity-ui-blog-constructor",
-  "version": "6.4.10",
+  "version": "6.4.11",
   "description": "Gravity UI Blog Constructor",
   "license": "MIT",
   "repository": {
@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "@bem-react/classname": "^1.6.0",
-    "@doyourjob/gravity-ui-page-constructor": "^5.31.18",
+    "@doyourjob/gravity-ui-page-constructor": "^5.31.32",
     "@gravity-ui/components": "^3.4.2",
     "@gravity-ui/i18n": "^1.4.0",
     "lodash": "^4.17.21",
