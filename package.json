@@ -1,6 +1,6 @@
 {
   "name": "@doyourjob/gravity-ui-blog-constructor",
-  "version": "6.4.11",
+  "version": "6.4.12",
   "description": "Gravity UI Blog Constructor",
   "license": "MIT",
   "repository": {
@@ -60,7 +60,6 @@
   },
   "dependencies": {
     "@bem-react/classname": "^1.6.0",
-    "@doyourjob/gravity-ui-page-constructor": "^5.31.32",
     "@gravity-ui/components": "^3.4.2",
     "@gravity-ui/i18n": "^1.4.0",
     "lodash": "^4.17.21",
@@ -72,6 +71,7 @@
   },
   "peerDependencies": {
     "@diplodoc/transform": "^4.10.7",
+    "@doyourjob/gravity-ui-page-constructor": "^5.31.32",
     "@gravity-ui/uikit": "^6.1.1",
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
@@ -85,6 +85,7 @@
     "@gravity-ui/prettier-config": "^1.1.0",
     "@gravity-ui/stylelint-config": "^4.0.1",
     "@gravity-ui/tsconfig": "^1.0.0",
+    "@doyourjob/gravity-ui-page-constructor": "^5.31.32",
     "@gravity-ui/uikit": "^6.22.0",
     "@jest/environment": "^29.7.0",
     "@storybook/addon-essentials": "^8.0.5",
