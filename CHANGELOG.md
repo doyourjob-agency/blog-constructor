@@ -1,5 +1,13 @@
 # Changelog
 
+## [6.4.14](https://github.com/gravity-ui/blog-constructor/compare/v6.4.2...v6.4.14) (2025-08-22)
+
+
+### Features
+
+* add textSize for YFM block
+
+
 ## [6.4.2](https://github.com/gravity-ui/blog-constructor/compare/v6.4.1...v6.4.2) (2024-09-16)
 
 
