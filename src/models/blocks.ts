@@ -65,6 +65,7 @@ export type SuggestProps = ClassNameProps & {
 
 export type YFMProps = {
     text: string;
+    textSize?: 'xs' | 's' | 'm' | 'l' | 'xl';
 } & PaddingsYFMProps &
     QAProps;
 
