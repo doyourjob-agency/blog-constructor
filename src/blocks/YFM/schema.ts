@@ -19,6 +19,10 @@ export const YFM = {
                 type: 'string',
                 contentType: 'yfm',
             },
+            textSize: {
+                type: 'string',
+                enum: ['xs', 's', 'm', 'l', 'xl'],
+            },
         },
     },
 };
