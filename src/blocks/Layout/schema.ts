@@ -20,6 +20,9 @@ export const Layout = {
                 type: 'string',
                 enum: ['reverse', 'straight'],
             },
+            revertMode: {
+                type: 'boolean',
+            },
         },
     },
 };

@@ -43,6 +43,7 @@ export type HeaderProps = HeaderBlockProps & PaddingsYFMProps;
 export type LayoutProps = {
     fullWidth?: boolean;
     mobileOrder?: string;
+    revertMode?: boolean;
     children: ReactElement[];
 } & PaddingsYFMProps;
 

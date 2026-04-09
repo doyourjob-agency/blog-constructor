@@ -35,25 +35,41 @@ type SortedLayoutItems = {
 export const Layout = ({
     fullWidth,
     mobileOrder,
+    revertMode,
     children,
     paddingTop = 'xs',
     paddingBottom = 'xs',
 }: PropsWithChildren<LayoutProps>) => {
     const layout: LayoutType = useMemo(() => {
-        const layoutConfig: LayoutType = {
-            leftCol: {
-                sizes: {all: 12, lg: 8},
-                orders: {all: 1, lg: 1},
-            },
-            rightCol: {
-                sizes: {all: 12, lg: 3},
-                offsets: {
-                    all: 0,
-                    lg: 1,
-                },
-                orders: {all: 2, lg: 2},
-            },
-        };
+        const layoutConfig: LayoutType = revertMode
+            ? {
+                  leftCol: {
+                      sizes: {all: 12, lg: 4},
+                      orders: {all: 1, lg: 1},
+                  },
+                  rightCol: {
+                      sizes: {all: 12, lg: 6},
+                      offsets: {
+                          all: 0,
+                          lg: 1,
+                      },
+                      orders: {all: 2, lg: 2},
+                  },
+              }
+            : {
+                  leftCol: {
+                      sizes: {all: 12, lg: 8},
+                      orders: {all: 1, lg: 1},
+                  },
+                  rightCol: {
+                      sizes: {all: 12, lg: 3},
+                      offsets: {
+                          all: 0,
+                          lg: 1,
+                      },
+                      orders: {all: 2, lg: 2},
+                  },
+              };
 
         if (fullWidth) {
             layoutConfig.leftCol.sizes = {all: 12};
@@ -66,7 +82,7 @@ export const Layout = ({
         }
 
         return layoutConfig;
-    }, [fullWidth, mobileOrder]);
+    }, [fullWidth, mobileOrder, revertMode]);
 
     const renderChildren = (blockChildren: React.ReactChild[]) =>
         React.Children.map(blockChildren, (child, i) => (
