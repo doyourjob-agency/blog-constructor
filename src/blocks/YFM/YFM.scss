@@ -4,25 +4,27 @@
 $block: '.#{$namespace}blog-yfm-block';
 
 #{$block} {
-    &_size {
-        &_xs {
-            @include text-size(body-1);
-        }
+    @include add-specificity(&) {
+        &_size {
+            &_xs {
+                @include text-size(body-1);
+            }
 
-        &_s {
-            @include text-size(body-2);
-        }
+            &_s {
+                @include text-size(body-2);
+            }
 
-        &_m {
-            @include text-size(body-3);
-        }
+            &_m {
+                @include text-size(body-3);
+            }
 
-        &_l {
-            @include text-size(header-1);
-        }
+            &_l {
+                @include text-size(header-1);
+            }
 
-        &_xl {
-            @include text-size(header-2);
+            &_xl {
+                @include text-size(header-2);
+            }
         }
     }
 }
